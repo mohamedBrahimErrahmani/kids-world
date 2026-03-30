@@ -3,10 +3,10 @@
     <div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
         <div class="text-2xl font-black text-sky-800 tracking-tighter font-headline">Kids World</div>
         <div class="hidden md:flex items-center space-x-8">
-            <a class="{{ request()->is('home-desktop') ? 'text-sky-700 font-bold border-b-2 border-sky-600 pb-1' : 'text-slate-500 hover:text-sky-600' }} transition-colors font-body text-sm" href="{{ route('home.desktop') }}">Playrooms</a>
+            <a class="{{ request()->routeIs('home.desktop') ? 'text-sky-700 font-bold border-b-2 border-sky-600 pb-1' : 'text-slate-500 hover:text-sky-600' }} transition-colors font-body text-sm" href="{{ route('home.desktop') }}">Playrooms</a>
             <a class="text-slate-500 hover:text-sky-600 transition-colors font-body text-sm" href="#">Nursery</a>
-            <a class="text-slate-500 hover:text-sky-600 transition-colors font-body text-sm" href="#">Learning</a>
-            <a class="{{ request()->is('category-desktop') ? 'text-sky-700 font-bold border-b-2 border-sky-600 pb-1' : 'text-slate-500 hover:text-sky-600' }} transition-colors font-body text-sm" href="{{ route('category.desktop') }}">Toys</a>
+            <a class="{{ request()->is('#trending') ? 'text-sky-700 font-bold border-b-2 border-sky-600 pb-1' : 'text-slate-500 hover:text-sky-600' }} transition-colors font-body text-sm" href="{{ route('home') }}#trending">Trending</a>
+            <a class="{{ request()->routeIs('category.desktop') ? 'text-sky-700 font-bold border-b-2 border-sky-600 pb-1' : 'text-slate-500 hover:text-sky-600' }} transition-colors font-body text-sm" href="{{ route('category.desktop') }}">Toys</a>
             <a class="text-slate-500 hover:text-sky-600 transition-colors font-body text-sm" href="#">Gifts</a>
         </div>
         <div class="flex items-center space-x-6">

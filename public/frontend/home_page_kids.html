@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kids World | High-End Editorial Curations</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container": "#e6e8ea",
+                        "on-error": "#ffefee",
+                        "on-error-container": "#570008",
+                        "on-tertiary-container": "#625f36",
+                        "primary-fixed": "#44a6f6",
+                        "on-primary-fixed-variant": "#002e4e",
+                        "primary-container": "#44a6f6",
+                        "on-secondary": "#dcfbdd",
+                        "tertiary-dim": "#54512a",
+                        "on-surface-variant": "#595c5d",
+                        "tertiary-container": "#fef8c3",
+                        "on-tertiary-fixed-variant": "#6d6940",
+                        "surface-container-low": "#eff1f2",
+                        "on-secondary-container": "#3e5842",
+                        "secondary-container": "#cceacd",
+                        "primary-fixed-dim": "#3199e8",
+                        "surface-variant": "#dadddf",
+                        "primary-dim": "#005386",
+                        "secondary": "#47624b",
+                        "on-surface": "#2c2f30",
+                        "background": "#f5f6f7",
+                        "tertiary-fixed-dim": "#f0eab6",
+                        "surface-tint": "#005f99",
+                        "outline": "#757778",
+                        "secondary-fixed": "#cceacd",
+                        "error-container": "#fb5151",
+                        "tertiary": "#605d34",
+                        "surface-container-high": "#e0e3e4",
+                        "inverse-surface": "#0c0f10",
+                        "on-background": "#2c2f30",
+                        "inverse-on-surface": "#9b9d9e",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#40a4f4",
+                        "error-dim": "#9f0519",
+                        "outline-variant": "#abadae",
+                        "on-secondary-fixed": "#2c4530",
+                        "on-primary": "#ecf3ff",
+                        "secondary-dim": "#3c5640",
+                        "error": "#b31b25",
+                        "surface": "#f5f6f7",
+                        "primary": "#005f99",
+                        "on-secondary-fixed-variant": "#47624b",
+                        "tertiary-fixed": "#fef8c3",
+                        "on-primary-fixed": "#000000",
+                        "on-tertiary-fixed": "#4f4d26",
+                        "on-primary-container": "#00253f",
+                        "surface-dim": "#d1d5d7",
+                        "secondary-fixed-dim": "#bedcbf",
+                        "surface-container-highest": "#dadddf",
+                        "on-tertiary": "#faf5c0",
+                        "surface-bright": "#f5f6f7"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Be Vietnam Pro"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .text-shadow-sm {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-sky-700 dark:text-sky-400" data-icon="search">search</span>
+<span class="text-2xl font-black text-sky-800 dark:text-sky-300 tracking-tighter font-headline">Kids World</span>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-sky-700 dark:text-sky-400 font-bold border-b-2 border-sky-600 font-headline" href="#">Home</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-sky-600 dark:hover:text-sky-300 transition-colors font-headline" href="#">Categories</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-sky-600 dark:hover:text-sky-300 transition-colors font-headline" href="#">Trending</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-sky-600 dark:hover:text-sky-300 transition-colors font-headline" href="#">Guides</a>
+</nav>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Parent Profile" class="w-full h-full object-cover" data-alt="Close up portrait of a smiling parent" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB7EgxsXHDuIh7tGbSsQapLAwoHMCO7JU6YeTaxU_hhJJqkZaNcJRM8vpIYD-CEUBTI5de14ZZfLVUGcxPeqzUmqUDRZeXj5k-SFdB_lTdoOcnZGJMcHIv0wLsgi3mB1HQXyAbPYgU6VTrGQ_v4DbfFWo5zjASowGdnBn-SoXsUOGgz7CZIbdLD4wqKPSKZeHKCqExYzKppMk3eO64pHY4i7PgSsSdsRwZc6lAxVli9__0Kj7vJLnXLcQ95PK2bQCtVmeR3ful6w"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-6 mb-20">
+<div class="relative h-[600px] rounded-xl overflow-hidden bg-surface-container-low group">
+<img alt="Hero Background" class="absolute inset-0 w-full h-full object-cover" data-alt="A high-quality editorial-style photo of modern wooden Montessori toys in a sun-drenched nursery, focusing on craftsmanship and aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgrQhrIO8S8DKdC-SQIvn1mM4Zu7Q045nhjqudQ_ZKC3DxqPCEZURs_9Klr-v25ntdefdXAKu3yYnWCQAyR8gRsbrtgK818GboQRiyxNgyNA5JeNIfhvntrYtzj31E1L9YxFz5_q3YyzVk6UDSG7nNA57KoFqCcpv2rPJ7Sl2lt0DefxC1mZaSIG9nl8VyEkYpHe6DvrRkRUqrPSU2y7MrRT2w88vqBMHDkex6H_6G5s_VzJp8JS-xHJNs1STW7faUTXq_hF5hHA"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface/80 via-surface/20 to-transparent flex items-center">
+<div class="max-w-xl px-12">
+<span class="inline-block px-4 py-1.5 rounded-full bg-tertiary-container text-on-tertiary-container text-sm font-bold tracking-wider uppercase mb-6 font-label">2026 Curated Selection</span>
+<h1 class="text-5xl md:text-7xl font-headline font-extrabold text-on-surface leading-[1.1] tracking-tight mb-6">
+                            Best Products for Your Kids <span class="text-primary italic">in 2026</span>
+</h1>
+<p class="text-lg text-on-surface-variant mb-10 font-body leading-relaxed max-w-md">
+                            Discover high-end, editorial-approved gear and toys that inspire wonder and support healthy development.
+                        </p>
+<div class="flex gap-4">
+<button class="px-8 py-4 rounded-xl bg-gradient-to-b from-primary to-primary-container text-on-primary font-bold shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all">
+                                Shop Now
+                            </button>
+<button class="px-8 py-4 rounded-xl bg-surface-container-lowest text-on-surface font-semibold shadow-sm hover:bg-surface-container transition-colors">
+                                View Lookbook
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Categories: Asymmetric Layout -->
+<section class="max-w-7xl mx-auto px-6 mb-24">
+<div class="flex flex-col md:flex-row gap-8">
+<div class="md:w-1/3 flex flex-col gap-8">
+<h2 class="text-4xl font-headline font-bold text-on-surface leading-tight">Curated<br/>Categories</h2>
+<p class="text-on-surface-variant max-w-xs">Hand-picked selections categorized for Every stage of growth.</p>
+<div class="flex-1 rounded-lg bg-secondary-container p-8 flex flex-col justify-between group cursor-pointer overflow-hidden relative">
+<img alt="Toys" class="absolute right-[-20px] bottom-[-20px] w-48 opacity-40 group-hover:scale-110 transition-transform" data-alt="Minimalist high-quality wooden toys on a soft rug" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-dMO4wTK4f2cFMHQdFcX-I02Ggj6YEdpwyFT1rut-blUwQWmsTkYk4ZTBfrfqn-uFMjE8vAcEx1BLuVFFfdtEEYbuyiZsYaw21dAqzG4LHadR2ilZfgoyBc5GPjfihp0MXK0Hl1HTvH_4hpcbQipkfpZTku1ytLIRoNQ7FPIiF8DMvNzG618CSes4isnssq9QDeHbgUY9b3hHxYoie5In8FOJo2zLeklCZbNhYXXoVrYhPNl_qSLBJlsi4qDXHPojeFNp1mBJnA"/>
+<h3 class="text-2xl font-headline font-bold text-on-secondary-container relative z-10">Toys</h3>
+<span class="material-symbols-outlined text-4xl text-on-secondary-container" data-icon="rocket_launch">rocket_launch</span>
+</div>
+</div>
+<div class="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="h-80 rounded-lg bg-surface-container-low p-8 flex flex-col justify-end relative overflow-hidden group cursor-pointer">
+<img alt="Baby Care" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Soft baby care products in pastel packaging" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWOY-yqIsnuYJ2yyj29B_1xnhjE9KAJyntbPQ3WhdlnFXvP9Q7lz9BtHM3mCwNJzQZb7N4PnWt-sSiNwM_RLJGCDKTxRnZHy0zDNqakofmLxC3I68uNTkkVVHPdb_Leqw_sci4tPNmg4ALdbP8swWXE9ptx0eDQqiTHaeXqswtk8Wijc2X01IAGGOn80MFdOa8fJWSXGLabfWc275ojwyERXMAHG0GN5vySosSWKxopfqTalHRgBd711tV957HeHupTWlYQuw2Ng"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<h3 class="text-2xl font-headline font-bold text-white relative z-10">Baby Care</h3>
+</div>
+<div class="h-80 rounded-lg bg-surface-container-low p-8 flex flex-col justify-end relative overflow-hidden group cursor-pointer">
+<img alt="Clothing" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Stylish children clothing hanging on a wooden rack" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcX7W1Kz_6J48E2rfmbzbtDVXa1ZXHUT_1z4RKeewU_zQpqBbUE3eS1CSv_S1dhX312907Sya4tJcHlqBs9ZJflEbLXGlOEWYS04qok05kBZmpPLJCciwzndyutgN6yOChEyW6AT5Lo2yBnKxApiNuWO9Si9sx5d2m-bV2aW3ls0CKQJJm4ea9suAxjd7qHZTSyLjmqzXFwx2Sx1u9ahdvIyU-gfYTj8U-2vAENXjhWHTJFSZnX9KdgAQ1ioeFBV3DqSQmTnvVGA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<h3 class="text-2xl font-headline font-bold text-white relative z-10">Clothing</h3>
+</div>
+<div class="md:col-span-2 h-64 rounded-lg bg-surface-container-high p-8 flex items-center justify-between relative overflow-hidden group cursor-pointer">
+<img alt="School Items" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Premium school supplies and ergonomic backpack" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABueK50nh4sL3Smhp-bGc0FNbNEyPDfcueERnJ7EUqSdSrClW7SH4aC0Myu836MdLhzpjVb_A54VxB_Lw7-pVhRWeO_Encv3BNYdBi6aSmGvEiMyvKoavFXBfM9sbB7-RA4GsdqZe9g9xyZ2hgyGn2MT19eoZKnIlh6cr3bByc6uEzlV9Hbzh1TZnroiTKfNKmaRKaP-7krhbnhQ25BfnnROckZUv1ZZytH31mJohbu-4yENSvM6y1NmsXntdi5wc39nUZ9envdA"/>
+<div class="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
+<div class="relative z-10">
+<h3 class="text-3xl font-headline font-bold text-white">School Items</h3>
+<p class="text-white/90 mt-2">Gear for the modern learner.</p>
+</div>
+<span class="material-symbols-outlined text-white text-5xl relative z-10" data-icon="school">school</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Top 10 Products List -->
+<section class="bg-surface-container-low py-24 mb-24">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="text-4xl font-headline font-bold text-on-surface">Top 10 Products</h2>
+<p class="text-on-surface-variant mt-2 font-body">Ranked by performance, safety, and parent satisfaction.</p>
+</div>
+<button class="text-primary font-bold flex items-center gap-2 hover:underline">
+                        View All Rankings <span class="material-symbols-outlined" data-icon="trending_flat">trending_flat</span>
+</button>
+</div>
+<div class="space-y-6">
+<!-- Product Item 1 -->
+<div class="bg-surface-container-lowest p-4 rounded-xl flex flex-col md:flex-row items-center gap-6 group hover:shadow-xl transition-shadow border border-white/10">
+<div class="w-16 h-16 flex items-center justify-center bg-primary text-on-primary rounded-full font-headline font-black text-2xl flex-shrink-0">1</div>
+<div class="w-24 h-24 rounded-lg bg-slate-100 overflow-hidden flex-shrink-0">
+<img alt="Dog Toy" class="w-full h-full object-cover" data-alt="High-end organic cotton plush dog toy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFCv3AZjsjFPlw_7rYnP2evef01vVdlYOngJ3LsFRBXlKE52_XbKqqlJnE5ICBxSAqkPLLQy0oMOt5AWfEAHSUhFkF6U5YZxD9nYUTOWLsqtkCBj5rRRMJ99zk0Dn01H3xRRCLIAn8Fv4Ug5ckjqI6jFtJeFm0xadli7_cCxvfXGJHt3stDKx9mfNK1qG8NUi_D6sETm6zbJwNEEWVPGCx21DgX5H3S_8caez3_uQ9MitTnWkioKqPQ5Zgnx0dz-mnERP9RQbz4A"/>
+</div>
+<div class="flex-grow">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-xs font-bold font-label uppercase text-on-surface-variant tracking-widest">Baby Care</span>
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<h3 class="text-xl font-headline font-bold">Lullaby Cloud Organic Night Lamp</h3>
+</div>
+<div class="flex-shrink-0 text-right md:pr-4">
+<span class="block text-2xl font-black text-on-surface mb-2 font-headline">$49.00</span>
+<button class="px-6 py-2 rounded-full bg-surface-container text-on-surface-variant font-bold text-sm hover:bg-primary hover:text-white transition-colors">View Product</button>
+</div>
+</div>
+<!-- Product Item 2 -->
+<div class="bg-surface-container-lowest p-4 rounded-xl flex flex-col md:flex-row items-center gap-6 group hover:shadow-xl transition-shadow border border-white/10">
+<div class="w-16 h-16 flex items-center justify-center bg-surface-container-high text-on-surface rounded-full font-headline font-black text-2xl flex-shrink-0">2</div>
+<div class="w-24 h-24 rounded-lg bg-slate-100 overflow-hidden flex-shrink-0">
+<img alt="Building Blocks" class="w-full h-full object-cover" data-alt="Sustainably sourced colorful wooden building blocks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBetQKrA6vIrMxaxT7sBrXyvWukbPF0lqpisIp_JqFnRHZ574457rq1mrHSKZ7yn7H2ndBoPms8zkwe6p45nSkpk0uhJvBTnf4L-rD-CPHcIKcUlgHf9M5cHoL3HFI0rvu9En3yiasas0klFjzBQ1eP-UwlUURr4_KPCUlbak9dYf0g0r-mm2Qrai8GxR44tAG_MdCPp8TD5SsuWEhXMG-984aHcB7l7YNHzMO0KcoZttgWHoegbFwJF3IJ3v6B0f0MZOMxg3VgPg"/>
+</div>
+<div class="flex-grow">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-xs font-bold font-label uppercase text-on-surface-variant tracking-widest">Toys</span>
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 0;">star</span>
+</div>
+</div>
+<h3 class="text-xl font-headline font-bold">Bio-Plastic Modular Sand Castle Set</h3>
+</div>
+<div class="flex-shrink-0 text-right md:pr-4">
+<span class="block text-2xl font-black text-on-surface mb-2 font-headline">$35.99</span>
+<button class="px-6 py-2 rounded-full bg-surface-container text-on-surface-variant font-bold text-sm hover:bg-primary hover:text-white transition-colors">View Product</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending: TikTok Video Style -->
+<section class="max-w-7xl mx-auto px-6 mb-24">
+<div class="flex items-center gap-4 mb-10">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-error-container text-on-error">
+<span class="material-symbols-outlined" data-icon="local_fire_department">local_fire_department</span>
+</span>
+<h2 class="text-4xl font-headline font-bold text-on-surface">Popular on TikTok</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<!-- Video Card 1 -->
+<div class="aspect-[9/16] rounded-lg overflow-hidden relative group cursor-pointer">
+<img alt="TikTok Product" class="w-full h-full object-cover" data-alt="Vertical video still of a child using a colorful interactive tablet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDie7Iovk1wwScv6ukVsen93c0NeER5AdGmuxB5MBbg-kXsjbhpxilK6UFlJcokXEInJ3xBqSilY3TgqxKxFLuaeyp5KhVSI5rI2Lje74Z0dxMU2g3ycw1f_SwfzMffwd44ZbWVsVyIbrB-iBOlPmb0bMXmCZGLMj5VMqAwEbPf3UDN0VaY4htoNXqIOUktHmF81ZrnCzkT45m1j3BGZTrZ8BlQN6-hH7pZDMjaG2yUnr2TnGbYwftx372NuY4aTV1HiZ3__BUM5Q"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute top-4 right-4 bg-black/60 backdrop-blur-md rounded-full px-3 py-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-white text-xs" data-icon="visibility">visibility</span>
+<span class="text-white text-xs font-bold">1.2M</span>
+</div>
+<div class="absolute bottom-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent">
+<p class="text-white text-sm font-bold line-clamp-2 mb-2 font-body">Unboxing the magic drawing board that everyone's talking about!</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed" data-icon="shopping_bag">shopping_bag</span>
+<span class="text-primary-fixed text-xs font-bold font-headline">Shop Tagged Items</span>
+</div>
+</div>
+</div>
+<!-- Video Card 2 -->
+<div class="aspect-[9/16] rounded-lg overflow-hidden relative group cursor-pointer">
+<img alt="TikTok Product 2" class="w-full h-full object-cover" data-alt="Vertical video still of sustainable kids lunchbox" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvALwHzORjicXMwqNMWYQE96H0cPQn8RAWlsUB0TMopomEwOH8hoshlQ5CpU9EPrDobpdJrx1KDM6MqrAUp9ZcOynATPdP9CxQpjjcA4IVMLtw_qaEAq_xHlxNpj43K9z-P7qETFyh6MEblHFRYUObeeXNgKaMtkZwf7-Klew21SrcFYUaRFWfz1EnPdoaa87xnRjMQg99ClzIcZCVU9XwwvZHMT48KORMwZbKPPyRh1S-lQj9KLBjd1a0nYo_OPyKbHo53kWu7g"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute top-4 right-4 bg-black/60 backdrop-blur-md rounded-full px-3 py-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-white text-xs" data-icon="visibility">visibility</span>
+<span class="text-white text-xs font-bold">850K</span>
+</div>
+<div class="absolute bottom-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent">
+<p class="text-white text-sm font-bold line-clamp-2 mb-2 font-body">My morning routine with the smartest lunchbox ever 🥪</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed" data-icon="shopping_bag">shopping_bag</span>
+<span class="text-primary-fixed text-xs font-bold font-headline">Shop Tagged Items</span>
+</div>
+</div>
+</div>
+<!-- Video Card 3 -->
+<div class="aspect-[9/16] rounded-lg overflow-hidden relative group cursor-pointer hidden md:block">
+<img alt="TikTok Product 3" class="w-full h-full object-cover" data-alt="Vertical video still of a cozy children nursery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwklpZMSOGR57QuqLK8UOnORtYewRkIPxtcp7SIvC-6DILoZizePWZ8lienR3meykdt6woUT4deEUZQITNlnyVRoUgISeNMyzo-Q0V642Ie0DXuPLJbF0BB6uwdwTRO2G5BJ-gNV-cR-0nPd0sMRhbzhYkXXFsaJq5mA28_0g3aMEpDAswuCGYVzMlcN-Z6Z8YFRJhnQPkE3I3P0thj_Ndir4so3Uyud4mxCqMR4aPu_bYz1hzGiH_M6fhGT8u0xXZoQtYDSd2dA"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute top-4 right-4 bg-black/60 backdrop-blur-md rounded-full px-3 py-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-white text-xs" data-icon="visibility">visibility</span>
+<span class="text-white text-xs font-bold">3.1M</span>
+</div>
+<div class="absolute bottom-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent">
+<p class="text-white text-sm font-bold line-clamp-2 mb-2 font-body">Cozy room makeover using only Kids World essentials ✨</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed" data-icon="shopping_bag">shopping_bag</span>
+<span class="text-primary-fixed text-xs font-bold font-headline">Shop Tagged Items</span>
+</div>
+</div>
+</div>
+<!-- Video Card 4 -->
+<div class="aspect-[9/16] rounded-lg overflow-hidden relative group cursor-pointer hidden md:block">
+<img alt="TikTok Product 4" class="w-full h-full object-cover" data-alt="Vertical video still of a child playing in fashionable boots" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR30_dDW6JNxQK_6xhx2aafqhRjR7AgnghyPc89ulbm_R1W9Vf2oilr7_Hzfne7udFb_oVMoa09P93sWCt6xkGEe4F5aocSoHl5euhz2J29uF1nucwsHbR4bb6_AR6ZtbpKotKQ8ZFCyt4Z0-mt7DWtHCRxzo0M4hBdpmMnQUMxl-oYT2It140s7RjDETUDsNCXAqzSTAkfanL0fmsBehKsOclb57SosgYfiMfgKxRzyy1L4Uvd8Y2R6ITVXu-usjw3zFtqpxTMQ"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute top-4 right-4 bg-black/60 backdrop-blur-md rounded-full px-3 py-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-white text-xs" data-icon="visibility">visibility</span>
+<span class="text-white text-xs font-bold">542K</span>
+</div>
+<div class="absolute bottom-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent">
+<p class="text-white text-sm font-bold line-clamp-2 mb-2 font-body">Puddle jumping tested! These boots are life savers 🌧️</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed" data-icon="shopping_bag">shopping_bag</span>
+<span class="text-primary-fixed text-xs font-bold font-headline">Shop Tagged Items</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg shadow-[0_-10px_40px_rgba(0,0,0,0.05)] z-50">
+<a class="flex flex-col items-center justify-center bg-sky-100 dark:bg-sky-900/40 text-sky-800 dark:text-sky-200 rounded-[2rem] px-5 py-2 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home_app_logo">home_app_logo</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold uppercase tracking-wider mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold uppercase tracking-wider mt-1">Categories</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold uppercase tracking-wider mt-1">Trending</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold uppercase tracking-wider mt-1">Guides</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 mt-20 bg-slate-50 dark:bg-slate-950">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 max-w-7xl mx-auto border-t border-slate-200/50 dark:border-slate-800/50 pt-12">
+<div>
+<span class="text-lg font-bold text-slate-800 dark:text-slate-200 block mb-2 font-headline">Kids World</span>
+<p class="text-slate-500 dark:text-slate-400 font-body max-w-sm">© 2026 Kids World. High-End Editorial Curations for Parents.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-800 dark:hover:text-sky-200 transition-colors font-body text-sm" href="#">About Us</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-800 dark:hover:text-sky-200 transition-colors font-body text-sm" href="#">Affiliate Disclosure</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-800 dark:hover:text-sky-200 transition-colors font-body text-sm" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-800 dark:hover:text-sky-200 transition-colors font-body text-sm" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

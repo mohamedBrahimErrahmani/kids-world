@@ -15,9 +15,7 @@ Route::get('/product', function () {
     return view('pages.product');
 })->name('product');
 
-Route::get('/blog', function () {
-    return view('pages.blog');
-})->name('blog');
+Route::resource('blog', \App\Http\Controllers\BlogPostController::class);
 
 // Desktop Versions
 Route::get('/home-desktop', function () {

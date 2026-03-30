@@ -9,7 +9,7 @@
         <!-- Hero Section -->
         <section class="max-w-7xl mx-auto px-6 mb-20">
             <div class="relative h-[600px] rounded-xl overflow-hidden bg-surface-container-low group">
-                <img alt="Hero Background" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyDsck7wY1pyfwYkOqpsmd4B8p-IR2LSwlqnHy9QL1CxxadZfANIpZO0qzAzX02D-9ZdEDHXqtss2YN5tlu5PruRNHD0dIdB8AGrVOHk19SNRECwJ44ZuobmXcgm6jUMxAKpxPWPBmIm4CjQB3_y6Zx7cYpKaIqBfQrSL9qEgphEOVW-AsYKzaX2aMSHesV2RaIKm9Q3wku3YQQb8I0Ic0vWEQ6ISNi-xtDsybodBmgERKU1DB5IOTmxojBbaxXUK63qpjwY0WZQ"/>
+                <img alt="Hero Background" class="absolute inset-0 w-full h-full object-cover" src="{{ asset('frontend/assets/images/hero_toys.png') }}"/>
                 <div class="absolute inset-0 bg-gradient-to-r from-surface/80 via-surface/20 to-transparent flex items-center">
                     <div class="max-w-xl px-12">
                         <span class="inline-block px-4 py-1.5 rounded-full bg-tertiary-container text-on-tertiary-container text-sm font-bold tracking-wider uppercase mb-6 font-label">2026 Curated Selection</span>
@@ -20,12 +20,12 @@
                             Discover high-end, editorial-approved gear and toys that inspire wonder and support healthy development.
                         </p>
                         <div class="flex gap-4">
-                            <button class="px-8 py-4 rounded-xl bg-gradient-to-b from-primary to-primary-container text-on-primary font-bold shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all">
+                            <a href="{{ route('category') }}" class="px-8 py-4 rounded-xl bg-gradient-to-b from-primary to-primary-container text-on-primary font-bold shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all text-center">
                                 Shop Now
-                            </button>
-                            <button class="px-8 py-4 rounded-xl bg-surface-container-lowest text-on-surface font-semibold shadow-sm hover:bg-surface-container transition-colors">
+                            </a>
+                            <a href="{{ route('blog.index') }}" class="px-8 py-4 rounded-xl bg-surface-container-lowest text-on-surface font-semibold shadow-sm hover:bg-surface-container transition-colors text-center">
                                 View Lookbook
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
         </section>
 
         <!-- Top 10 Products List -->
-        <section class="bg-surface-container-low py-24 mb-24">
+        <section id="top-10" class="bg-surface-container-low py-24 mb-24">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="flex justify-between items-end mb-12">
                     <div>
@@ -117,7 +117,7 @@
                 </span>
                 <h2 class="text-4xl font-headline font-bold text-on-surface">Popular on TikTok</h2>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div id="trending" class="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <!-- Video Cards (Simplified for Blade) -->
                 @php
                     $videos = [
