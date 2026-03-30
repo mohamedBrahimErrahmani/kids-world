@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Management - Kids World Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-container": "#3e5842",
+              "on-primary-fixed": "#000000",
+              "secondary": "#47624b",
+              "on-secondary": "#dcfbdd",
+              "on-primary": "#ecf3ff",
+              "surface-container-highest": "#dadddf",
+              "outline": "#757778",
+              "primary-fixed": "#44a6f6",
+              "inverse-surface": "#0c0f10",
+              "inverse-primary": "#40a4f4",
+              "on-primary-fixed-variant": "#002e4e",
+              "secondary-fixed": "#cceacd",
+              "on-error": "#ffefee",
+              "on-surface-variant": "#595c5d",
+              "surface-container-low": "#eff1f2",
+              "primary": "#005f99",
+              "tertiary-dim": "#54512a",
+              "on-tertiary-fixed-variant": "#6d6940",
+              "surface-bright": "#f5f6f7",
+              "on-secondary-fixed-variant": "#47624b",
+              "on-surface": "#2c2f30",
+              "on-error-container": "#570008",
+              "inverse-on-surface": "#9b9d9e",
+              "tertiary": "#605d34",
+              "surface-container": "#e6e8ea",
+              "error-dim": "#9f0519",
+              "tertiary-container": "#fef8c3",
+              "outline-variant": "#abadae",
+              "tertiary-fixed-dim": "#f0eab6",
+              "on-tertiary-container": "#625f36",
+              "tertiary-fixed": "#fef8c3",
+              "on-primary-container": "#00253f",
+              "on-secondary-fixed": "#2c4530",
+              "background": "#f5f6f7",
+              "secondary-fixed-dim": "#bedcbf",
+              "primary-dim": "#005386",
+              "surface-container-high": "#e0e3e4",
+              "surface-tint": "#005f99",
+              "error-container": "#fb5151",
+              "surface-variant": "#dadddf",
+              "on-background": "#2c2f30",
+              "primary-fixed-dim": "#3199e8",
+              "on-tertiary-fixed": "#4f4d26",
+              "surface": "#f5f6f7",
+              "secondary-container": "#cceacd",
+              "secondary-dim": "#3c5640",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#faf5c0",
+              "surface-dim": "#d1d5d7",
+              "primary-container": "#44a6f6",
+              "error": "#b31b25"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Be Vietnam Pro"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Be Vietnam Pro', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex overflow-hidden">
+<!-- SideNavBar (Authority: JSON) -->
+<aside class="hidden md:flex flex-col h-full py-6 border-r border-slate-100 dark:border-slate-800 fixed left-0 top-0 w-64 bg-slate-50 dark:bg-slate-950 z-50">
+<div class="px-6 mb-10 flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" data-icon="child_care">child_care</span>
+</div>
+<div>
+<h1 class="text-lg font-extrabold text-sky-800 dark:text-sky-300 leading-none">Kids World</h1>
+<p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold mt-1">Admin Console</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl mx-2 my-1 px-4 py-3 flex items-center gap-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="bg-white dark:bg-slate-900 text-sky-700 dark:text-sky-400 shadow-sm rounded-xl mx-2 my-1 px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-sm font-semibold">User Management</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl mx-2 my-1 px-4 py-3 flex items-center gap-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="lock_person">lock_person</span>
+<span class="text-sm font-medium">Roles &amp; Permissions</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl mx-2 my-1 px-4 py-3 flex items-center gap-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="text-sm font-medium">Activity Logs</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl mx-2 my-1 px-4 py-3 flex items-center gap-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-sm font-medium">System Settings</span>
+</a>
+</nav>
+<div class="px-2 mt-auto pt-6 border-t border-slate-100 dark:border-slate-800">
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl px-4 py-3 flex items-center gap-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="text-sm font-medium">Support</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl px-4 py-3 flex items-center gap-3 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="text-sm font-medium">Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 md:ml-64 flex flex-col min-h-screen relative bg-surface">
+<!-- TopNavBar (Authority: JSON) -->
+<header class="fixed top-0 right-0 left-0 md:left-64 flex items-center justify-between px-6 h-16 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none z-40">
+<div class="flex items-center flex-1 max-w-xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-slate-400 transition-all" placeholder="Search members, roles, or status..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-2 ml-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-sky-50 dark:hover:bg-sky-900/30 transition-colors text-slate-500">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-sky-50 dark:hover:bg-sky-900/30 transition-colors text-slate-500">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-[1px] bg-slate-200 mx-2"></div>
+<div class="flex items-center gap-3">
+<img class="w-9 h-9 rounded-full object-cover" data-alt="Admin User Profile Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCae4VXuL5EYk1vkj8db-1s3NxvdP5n2FBOc7xLj72qEr_RWJU3hlDmGLwk9v1dL4Ju7rZTwJRQBfw-LltWJNraBtd-88K9vKN6h2jYvXdOjY6MNTGV50WCkPbfOnAmKyvG_DCw0iJU7ZQyVu-zFTop6E-ZpuM_hXEmOVhEUg01mKzpUHe50rdr0lf9lPvgiCJ0GFv3MWvICcoOy8CuTeN9GyQIww8y8A3d3CyzGidX80HTAwf-H7pXeXJFRn0Te2gozat5NsIHRA"/>
+<div class="hidden lg:block">
+<p class="text-sm font-bold text-on-surface leading-none">Sarah Jenkins</p>
+<p class="text-[10px] text-on-surface-variant font-medium mt-1">Super Admin</p>
+</div>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<div class="pt-24 px-8 pb-12 w-full max-w-7xl mx-auto">
+<!-- Page Header (Editorial Style) -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+<div>
+<h2 class="text-4xl font-extrabold tracking-tight text-on-surface mb-2">User Management</h2>
+<p class="text-on-surface-variant max-w-md">Oversee your community management team and assign specific playground permissions.</p>
+</div>
+<button class="bg-gradient-to-b from-primary to-primary-container text-white px-8 py-3.5 rounded-xl font-bold flex items-center gap-2 shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+                    Add New Admin
+                </button>
+</div>
+<!-- Dashboard Stats Bento (Intentional Asymmetry) -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
+<div class="md:col-span-2 bg-surface-container-lowest p-8 rounded-lg shadow-sm flex flex-col justify-between overflow-hidden relative border border-white/50">
+<div class="relative z-10">
+<p class="text-on-surface-variant font-medium mb-1">Total Management Staff</p>
+<h3 class="text-5xl font-extrabold text-primary mb-4">42</h3>
+<div class="flex items-center gap-2 text-secondary text-sm font-semibold">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+<span>+4 added this month</span>
+</div>
+</div>
+<!-- Decorative Background Element -->
+<div class="absolute -right-10 -bottom-10 w-40 h-40 bg-primary-container/10 rounded-full blur-3xl"></div>
+</div>
+<div class="bg-tertiary-container p-8 rounded-lg flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-4xl text-on-tertiary-container mb-2" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<h4 class="text-2xl font-bold text-on-tertiary-container">12</h4>
+<p class="text-sm text-on-tertiary-container/80 font-medium">Active Admins</p>
+</div>
+<div class="bg-secondary-container p-8 rounded-lg flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-4xl text-on-secondary-container mb-2" data-icon="pending_actions" style="font-variation-settings: 'FILL' 1;">pending_actions</span>
+<h4 class="text-2xl font-bold text-on-secondary-container">28</h4>
+<p class="text-sm text-on-secondary-container/80 font-medium">Content Managers</p>
+</div>
+</div>
+<!-- Table Filters -->
+<div class="flex flex-wrap items-center gap-4 mb-6">
+<div class="flex bg-surface-container-low rounded-full p-1 border border-outline-variant/10">
+<button class="px-6 py-2 rounded-full text-sm font-bold bg-white shadow-sm text-primary">All Users</button>
+<button class="px-6 py-2 rounded-full text-sm font-medium text-on-surface-variant hover:text-on-surface">Active</button>
+<button class="px-6 py-2 rounded-full text-sm font-medium text-on-surface-variant hover:text-on-surface">Inactive</button>
+</div>
+<div class="h-6 w-[1px] bg-outline-variant/30 hidden md:block mx-2"></div>
+<div class="flex items-center gap-3">
+<select class="bg-surface-container-lowest border-none text-sm font-medium rounded-full px-4 py-2 ring-1 ring-outline-variant/20 focus:ring-primary/30">
+<option>All Roles</option>
+<option>Admin</option>
+<option>Content Manager</option>
+<option>Product Manager</option>
+</select>
+</div>
+</div>
+<!-- Data Table (No Divider Rule, Tonal Layering) -->
+<div class="bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden border border-white/40">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50">
+<th class="px-8 py-5 text-sm font-extrabold text-on-surface tracking-wide uppercase text-[11px]">User Profile</th>
+<th class="px-8 py-5 text-sm font-extrabold text-on-surface tracking-wide uppercase text-[11px]">Role</th>
+<th class="px-8 py-5 text-sm font-extrabold text-on-surface tracking-wide uppercase text-[11px]">Status</th>
+<th class="px-8 py-5 text-sm font-extrabold text-on-surface tracking-wide uppercase text-[11px]">Last Login</th>
+<th class="px-8 py-5 text-right"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-transparent">
+<!-- User Row 1 -->
+<tr class="hover:bg-surface-container-low/30 transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden ring-2 ring-white">
+<img class="w-full h-full object-cover" data-alt="User Avatar Male Admin" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgxFeGJgyk1JnRGrtSqYkpzAC6214IfpbgyEOGjQPlJ9RGijuQBJPGInz48llF9hLRc_38vR49ttPceQM53XCHoxCo6hOFHnX52povHLVIVp-TFVtnFbQ1vA6gGPATj5mc_ICb-qA7NxfGmGxilwGHkVc3EEVpK2WvCkHuUy76SwdhD-6V3vXivFQvzk43TEawTpTRlW4roiSdhm9OVc1MnB0YVbacTbh8nUNJ7FPABeGc187SmQq5SvVY9r5THDwcLiUdIl-FnQ"/>
+</div>
+<div>
+<p class="font-bold text-on-surface group-hover:text-primary transition-colors">Marcus Chen</p>
+<p class="text-xs text-on-surface-variant">marcus.c@kidsworld.io</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="bg-sky-100 text-sky-800 text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Admin</span>
+</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="text-sm font-semibold text-secondary">Active</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<p class="text-sm font-medium text-on-surface-variant">2 mins ago</p>
+<p class="text-[10px] text-outline">Oct 24, 2023</p>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="w-10 h-10 rounded-full hover:bg-surface-container flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-slate-400">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- User Row 2 (Alternating Background Tonal Shift) -->
+<tr class="bg-surface-container-low/10 hover:bg-surface-container-low/30 transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden ring-2 ring-white">
+<img class="w-full h-full object-cover" data-alt="User Avatar Female Content Manager" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0hkA-DDmEsLNDee_sOJMoJDf9ZWpPN-AEhWkMdr-NuvlluW8jeVVuAg-cEJBsfgLefksg9PK5NbLZZJt-PuooN1JbfwBt9MctFT4atCutSADhM9c_xp-2jfSHqqjsof7UvzDaPqxjKRO57mIjD7dUIyiaZB3xu9VtHuTnqoq-quAyPjkxFps93rjPuzLjkIgTiHZlZ6UfskqKzSgnaYqQUqU3OQJHpLolVNJV-kYhFiwvvoWP0Mg9y3p0V3X9xcfFewfpOfONjw"/>
+</div>
+<div>
+<p class="font-bold text-on-surface group-hover:text-primary transition-colors">Elena Rodriguez</p>
+<p class="text-xs text-on-surface-variant">elena.r@kidsworld.io</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="bg-secondary-container text-on-secondary-container text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Content Manager</span>
+</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="text-sm font-semibold text-secondary">Active</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<p class="text-sm font-medium text-on-surface-variant">Yesterday</p>
+<p class="text-[10px] text-outline">Oct 23, 2023</p>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="w-10 h-10 rounded-full hover:bg-surface-container flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-slate-400">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- User Row 3 -->
+<tr class="hover:bg-surface-container-low/30 transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden ring-2 ring-white">
+<img class="w-full h-full object-cover" data-alt="User Avatar Male Product Manager" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-EQrsZ3ZOMg4XTWmnv45yJ0mnZMEOXbEkj9Kcq18hW9-OOk2fIK7B5PgmqZx0ymkeZtw9b36Rsbv-9ztVwmRHQQXUo3LibFYluiAZjpDAAMGG-aqQXIKXJqAnC_Vk2J7ESvzw1AaMwa3kt_c90uoKQCgNGmuZ0Y7w4egOAob2r65w1xsCDBFv3O4of8gsYI9n0WY-1GWrYQHebl44YBTJEm1u55CYR-NI3zon-u5SuGaZnptWkQbgpye6bYAxr1bNqf1ux1x-Mg"/>
+</div>
+<div>
+<p class="font-bold text-on-surface group-hover:text-primary transition-colors">Julian Vose</p>
+<p class="text-xs text-on-surface-variant">julian.v@kidsworld.io</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="bg-tertiary-container text-on-tertiary-container text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Product Manager</span>
+</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-outline"></div>
+<span class="text-sm font-semibold text-on-surface-variant">Inactive</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<p class="text-sm font-medium text-on-surface-variant">5 days ago</p>
+<p class="text-[10px] text-outline">Oct 19, 2023</p>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="w-10 h-10 rounded-full hover:bg-surface-container flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-slate-400">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- User Row 4 -->
+<tr class="bg-surface-container-low/10 hover:bg-surface-container-low/30 transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden ring-2 ring-white">
+<img class="w-full h-full object-cover" data-alt="User Avatar Female Admin" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYJJUaBHgQMdShe1OUU-iXx3ozGRFckA7dCJ1TUk1biXTkCHk65IidRj7utyyODL2EMr6HfyvS-KtZUfL0AcPq2k_z0Ho5YyGFtg1tIrGfMeQAAltoOAQZntNsZ-Ve2f359-dwTvWV1J6KTz_aJo_odeRUb1YaRbI-KfVmTSDC3cTf2TTNxna2n5WE1JRiLRFXdXs5jJbTO2ymqVC5bA0fcdo-ItRCWK9-Fo0oUAnrKun5zogKlmzWTv1s3CayXwPjvDwWUiwpHQ"/>
+</div>
+<div>
+<p class="font-bold text-on-surface group-hover:text-primary transition-colors">Aisha Khan</p>
+<p class="text-xs text-on-surface-variant">aisha.k@kidsworld.io</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="bg-sky-100 text-sky-800 text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Admin</span>
+</td>
+<td class="px-8 py-5">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="text-sm font-semibold text-secondary">Active</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<p class="text-sm font-medium text-on-surface-variant">1 hour ago</p>
+<p class="text-[10px] text-outline">Oct 24, 2023</p>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="w-10 h-10 rounded-full hover:bg-surface-container flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-slate-400">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination Footnote -->
+<div class="px-8 py-6 bg-surface-container-low/50 flex flex-col md:flex-row items-center justify-between gap-4">
+<p class="text-sm text-on-surface-variant">Showing <span class="font-bold text-on-surface">4</span> of <span class="font-bold text-on-surface">42</span> managers</p>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 rounded-full border border-outline-variant/20 flex items-center justify-center hover:bg-white disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined text-xl">chevron_left</span>
+</button>
+<div class="flex gap-1">
+<button class="w-10 h-10 rounded-full bg-primary text-white text-sm font-bold">1</button>
+<button class="w-10 h-10 rounded-full text-sm font-bold hover:bg-white">2</button>
+<button class="w-10 h-10 rounded-full text-sm font-bold hover:bg-white">3</button>
+</div>
+<button class="w-10 h-10 rounded-full border border-outline-variant/20 flex items-center justify-center hover:bg-white">
+<span class="material-symbols-outlined text-xl">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Contextual FAB (Restricted to relevant views) -->
+<div class="fixed bottom-8 right-8 z-50">
+<button class="w-14 h-14 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="support_agent">support_agent</span>
+</button>
+</div>
+</body></html>

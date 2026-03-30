@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-dim": "#005386",
+              "primary": "#005f99",
+              "surface-variant": "#dadddf",
+              "error": "#b31b25",
+              "secondary": "#47624b",
+              "on-error": "#ffefee",
+              "surface-container-low": "#eff1f2",
+              "on-surface-variant": "#595c5d",
+              "error-dim": "#9f0519",
+              "error-container": "#fb5151",
+              "secondary-fixed-dim": "#bedcbf",
+              "primary-fixed-dim": "#3199e8",
+              "on-primary-fixed-variant": "#002e4e",
+              "primary-fixed": "#44a6f6",
+              "on-primary-container": "#00253f",
+              "secondary-fixed": "#cceacd",
+              "secondary-container": "#cceacd",
+              "surface-tint": "#005f99",
+              "on-tertiary-container": "#625f36",
+              "on-secondary": "#dcfbdd",
+              "primary-container": "#44a6f6",
+              "outline": "#757778",
+              "tertiary-fixed-dim": "#f0eab6",
+              "on-primary": "#ecf3ff",
+              "on-tertiary-fixed-variant": "#6d6940",
+              "on-background": "#2c2f30",
+              "surface-bright": "#f5f6f7",
+              "on-surface": "#2c2f30",
+              "surface": "#f5f6f7",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-container": "#fef8c3",
+              "inverse-on-surface": "#9b9d9e",
+              "on-secondary-container": "#3e5842",
+              "tertiary-dim": "#54512a",
+              "secondary-dim": "#3c5640",
+              "inverse-surface": "#0c0f10",
+              "surface-container-high": "#e0e3e4",
+              "on-tertiary-fixed": "#4f4d26",
+              "surface-container": "#e6e8ea",
+              "surface-dim": "#d1d5d7",
+              "on-secondary-fixed": "#2c4530",
+              "on-tertiary": "#faf5c0",
+              "inverse-primary": "#40a4f4",
+              "background": "#f5f6f7",
+              "tertiary": "#605d34",
+              "on-secondary-fixed-variant": "#47624b",
+              "surface-container-highest": "#dadddf",
+              "tertiary-fixed": "#fef8c3",
+              "on-primary-fixed": "#000000",
+              "outline-variant": "#abadae",
+              "on-error-container": "#570008"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Be Vietnam Pro"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: #f5f6f7;
+            color: #2c2f30;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black text-sky-800 dark:text-sky-300 tracking-tighter">Kids World</span>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 transition-colors" href="#">Playrooms</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 transition-colors" href="#">Nursery</a>
+<a class="text-sky-700 dark:text-sky-400 font-bold border-b-2 border-sky-600 pb-1" href="#">Learning</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 transition-colors" href="#">Toys</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 transition-colors" href="#">Gifts</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center bg-slate-50/50 dark:bg-slate-800/50 rounded-full px-4 py-2 w-64">
+<span class="material-symbols-outlined text-slate-400 text-sm mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full p-0" placeholder="Search curated toys..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-sky-50 dark:hover:bg-sky-900/30 rounded-full transition-all text-slate-500">
+<span class="material-symbols-outlined">shopping_basket</span>
+</button>
+<button class="p-2 hover:bg-sky-50 dark:hover:bg-sky-900/30 rounded-full transition-all text-slate-500">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="p-2 hover:bg-sky-50 dark:hover:bg-sky-900/30 rounded-full transition-all text-slate-500">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+<button class="ml-2 bg-gradient-to-b from-primary to-primary-container text-on-primary px-6 py-2 rounded-xl font-semibold scale-95 active:scale-90 transition-transform duration-200">Sign Up</button>
+</div>
+</div>
+</header>
+<main class="flex-grow max-w-screen-2xl mx-auto w-full px-8 py-10 flex gap-12">
+<!-- Sidebar Filters -->
+<aside class="w-64 flex-shrink-0 space-y-10">
+<div>
+<h3 class="text-lg font-bold tracking-tight mb-6">Age Range</h3>
+<div class="space-y-3">
+<label class="flex items-center group cursor-pointer">
+<input class="rounded-lg border-outline-variant text-primary focus:ring-primary h-5 w-5 mr-3" type="checkbox"/>
+<span class="text-body-lg text-on-surface-variant group-hover:text-primary transition-colors">0-1 Years</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="rounded-lg border-outline-variant text-primary focus:ring-primary h-5 w-5 mr-3" type="checkbox"/>
+<span class="text-body-lg text-on-surface-variant group-hover:text-primary transition-colors">2-3 Years</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input checked="" class="rounded-lg border-outline-variant text-primary focus:ring-primary h-5 w-5 mr-3" type="checkbox"/>
+<span class="text-body-lg text-primary font-medium">4-6 Years</span>
+</label>
+</div>
+</div>
+<div class="pt-2">
+<h3 class="text-lg font-bold tracking-tight mb-6">Play Type</h3>
+<div class="space-y-3">
+<label class="flex items-center group cursor-pointer">
+<input checked="" class="rounded-lg border-outline-variant text-primary focus:ring-primary h-5 w-5 mr-3" type="checkbox"/>
+<span class="text-body-lg text-primary font-medium">Educational</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="rounded-lg border-outline-variant text-primary focus:ring-primary h-5 w-5 mr-3" type="checkbox"/>
+<span class="text-body-lg text-on-surface-variant group-hover:text-primary transition-colors">Fun &amp; Creative</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="rounded-lg border-outline-variant text-primary focus:ring-primary h-5 w-5 mr-3" type="checkbox"/>
+<span class="text-body-lg text-on-surface-variant group-hover:text-primary transition-colors">Outdoor Play</span>
+</label>
+</div>
+</div>
+<div class="bg-tertiary-container rounded-lg p-6 mt-8">
+<h4 class="font-bold text-on-tertiary-container mb-2">Curated for You</h4>
+<p class="text-sm text-on-tertiary-container/80 leading-relaxed">Personalize your playroom based on your child's milestones.</p>
+<button class="mt-4 text-sm font-bold text-on-tertiary-container underline underline-offset-4">Learn More</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<section class="flex-grow">
+<!-- Header Section -->
+<div class="flex justify-between items-end mb-10">
+<div>
+<nav class="flex text-xs text-on-surface-variant mb-3 gap-2">
+<span>Learning</span>
+<span>/</span>
+<span class="font-bold text-primary">Ages 4-6</span>
+</nav>
+<h1 class="text-4xl font-extrabold tracking-tighter text-on-surface">Modern Learning Essentials</h1>
+</div>
+<div class="flex items-center gap-4 text-sm font-medium">
+<span class="text-on-surface-variant">Sort by:</span>
+<button class="flex items-center bg-surface-container-low px-4 py-2 rounded-full gap-2 hover:bg-surface-container-high transition-colors">
+                        Most Popular
+                        <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="group bg-surface-container-lowest rounded-lg p-4 transition-all hover:bg-white hover:shadow-2xl hover:shadow-primary/5">
+<div class="relative aspect-square mb-6 overflow-hidden rounded-lg bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Wooden stacking geometric educational blocks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcb4Ui5m5C7b_bLIfVm1lhLsP6Vz4nlwo66a_x31i5KCqk1KJSO9rBdglFqqp3mTDDPLnpoSrljFc4IqBgCdpGlS8NHdvmFYoIIvSVKDtnYBX1Z-nwTc38GeLpJMPJSgn5jMrJBOVtGk_z2yGIkBrYCSxSo0LJrllxDrwKYFlnDQGsWQvOhKI_2ZuNTRt6WUXEK3EWDtQ6ASEy9IstQ7669fClp5dAiKaOs5rjstVGQueQQl1RmaWunP6di07iZKXooq2_0yHxFQ"/>
+<span class="absolute top-4 left-4 bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Trending</span>
+<button class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-sm text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-on-surface">Geometric Oak Stacker</h3>
+<span class="font-black text-primary">$45.00</span>
+</div>
+<div class="flex items-center gap-2 mb-4">
+<div class="flex text-yellow-500">
+<span class="material-symbols-outlined text-sm filled-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm filled-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm filled-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm filled-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+<span class="text-xs text-on-surface-variant font-medium">(128 reviews)</span>
+</div>
+<button class="w-full py-3 bg-surface-container-low text-on-primary-container font-bold rounded-xl group-hover:bg-primary group-hover:text-white transition-all">Add to Cart</button>
+</div>
+<!-- Card 2 -->
+<div class="group bg-surface-container-lowest rounded-lg p-4 transition-all hover:bg-white hover:shadow-2xl hover:shadow-primary/5">
+<div class="relative aspect-square mb-6 overflow-hidden rounded-lg bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Minimalist colorful alphabet learning cards" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvFmzrSi3gUo4wHOSv6-oS7l-0ldFH4a5qKhCaXuUdVyAUI__A0kCPZ0N-ziGyr7IJF1mGibR7kDPCLRd_b1y440ArevnbRoyLZBeajtSLJsQOjRUVr6bQC9EOjKpnEGYL1wo-YDMN7otr8nPrRMXqu_e71c1DT5qlzLbBfjysf8R3V75FHEUzBg1pOwPz4--qKsBx1HsssDVXhRnVUKufpyvBW_RVnApNdd4Kaka0Z_R5VqZH-wf8mDN84FoNYNWBtRm2iVVdTA"/>
+<button class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-sm text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-on-surface">Nordic Alpha Cards</h3>
+<span class="font-black text-primary">$28.00</span>
+</div>
+<div class="flex items-center gap-2 mb-4">
+<div class="flex text-yellow-500">
+<span class="material-symbols-outlined text-sm filled-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm filled-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm filled-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm filled-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm filled-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-xs text-on-surface-variant font-medium">(312 reviews)</span>
+</div>
+<button class="w-full py-3 bg-surface-container-low text-on-primary-container font-bold rounded-xl group-hover:bg-primary group-hover:text-white transition-all">Add to Cart</button>
+</div>
+<!-- Card 3 -->
+<div class="group bg-surface-container-lowest rounded-lg p-4 transition-all hover:bg-white hover:shadow-2xl hover:shadow-primary/5">
+<div class="relative aspect-square mb-6 overflow-hidden rounded-lg bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Creative watercolor kit for toddlers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG5NTCXDixEYMqe-zOVMdx7_d81x2PHMBZUC1iZCSigdr85hsDEEA233biudEw221QyKlnrBzh2FFsr3mNHQPJzgplDJRhYNMzWipi1uHvGxtE89QzTi99RhiDVV70tccwlglb_25z9KNaD2CD-OlMWbAuxu7c8XxQE3kWaeA6eptETs6k7yxEYgSCLPdV_rrzmKN0ZiRhosTRc9VlD7EO6r_h_U3xmjm7YX6UG7Frblt6rbADfU0U-bOYhKXSDj7gscVYu5amag"/>
+<span class="absolute top-4 left-4 bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Trending</span>
+<button class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-sm text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-on-surface">Bloom Watercolor Set</h3>
+<span class="font-black text-primary">$35.00</span>
+</div>
+<div class="flex items-center gap-2 mb-4">
+<div class="flex text-yellow-500">
+<span class="material-symbols-outlined text-sm filled-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm filled-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm filled-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm filled-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm">star_half</span>
+</div>
+<span class="text-xs text-on-surface-variant font-medium">(84 reviews)</span>
+</div>
+<button class="w-full py-3 bg-surface-container-low text-on-primary-container font-bold rounded-xl group-hover:bg-primary group-hover:text-white transition-all">Add to Cart</button>
+</div>
+<!-- Card 4 -->
+<div class="group bg-surface-container-lowest rounded-lg p-4 transition-all hover:bg-white hover:shadow-2xl hover:shadow-primary/5">
+<div class="relative aspect-square mb-6 overflow-hidden rounded-lg bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern wooden dollhouse minimalist design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgfz7z8SYp-fbbhXcyjQ9_brBQ3EqGdxjp9qW5jDGVjMUbhPEJbDcG6GOZzpdZn_6Ih4Vt_9cfSlnyZCC8SQLhokWcwbwSSSSCBP_94VikHULXuO1pFq9HAJyspru5Su2IpNTu4YJnjz4wVCHuqT2_wDIH0o3FQucfDbx6BkDEpkD66p5LH5na4sPSZ30ak5meoOHcprn8WrfApYhrGLQbjMCmy6mEiu-6TPW2KAc9UCbWragwJgNvZlIZnjlObwGv55DD4tZL4Q"/>
+<button class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-sm text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-on-surface">The Loft Dollhouse</h3>
+<span class="font-black text-primary">$120.00</span>
+</div>
+<div class="flex items-center gap-2 mb-4">
+<div class="flex text-yellow-500">
+<span class="material-symbols-outlined text-sm filled-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm filled-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm filled-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm filled-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm filled-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-xs text-on-surface-variant font-medium">(45 reviews)</span>
+</div>
+<button class="w-full py-3 bg-surface-container-low text-on-primary-container font-bold rounded-xl group-hover:bg-primary group-hover:text-white transition-all">Add to Cart</button>
+</div>
+<!-- Card 5 -->
+<div class="group bg-surface-container-lowest rounded-lg p-4 transition-all hover:bg-white hover:shadow-2xl hover:shadow-primary/5">
+<div class="relative aspect-square mb-6 overflow-hidden rounded-lg bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Educational magnetic building tiles set" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxx3DZSvr7kmWvkRu66eW_DXK_JGVQFX3G6etZTuUF3nXRB-BRrDBwNeeSK3-ujFDjM3qIcmNBbuFrxKgSpuPM-myfYqf29FwrbNZzSsHNPHY1ejvUqmyMMEKj3ebSMlYGEkSq9vx8Z_gvV8C0ytXl1GB0oTpBUPL85DuuUZwzIofdSpyv91le16pP4Il2Cc2_awZEqzNlfqCm5-fITA5MSqjAw5Y1Hkp0qOUR7XvoEZPcfFtvf7S4kK2rYONUGaN_n_wU2YdvZg"/>
+<span class="absolute top-4 left-4 bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Trending</span>
+<button class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-sm text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-on-surface">Prism Magnetic Tiles</h3>
+<span class="font-black text-primary">$65.00</span>
+</div>
+<div class="flex items-center gap-2 mb-4">
+<div class="flex text-yellow-500">
+<span class="material-symbols-outlined text-sm filled-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm filled-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm filled-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm filled-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+<span class="text-xs text-on-surface-variant font-medium">(219 reviews)</span>
+</div>
+<button class="w-full py-3 bg-surface-container-low text-on-primary-container font-bold rounded-xl group-hover:bg-primary group-hover:text-white transition-all">Add to Cart</button>
+</div>
+<!-- Card 6 -->
+<div class="group bg-surface-container-lowest rounded-lg p-4 transition-all hover:bg-white hover:shadow-2xl hover:shadow-primary/5">
+<div class="relative aspect-square mb-6 overflow-hidden rounded-lg bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Nature exploration kit with wooden magnifying glass" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA45475zKRhiw6j_kyp2TxvT6AkGJse1k41svX4GHo1KBawf-GBGGc1Wjn7jj706d5cBRrKX5MnXnYiVIwbrj_AfHHm4-MgC-vVoHcjCYioV_n05VyTUmglDki_mELxbYAjeTA3wJOHWRBgCCq5__lT1ceglTZx0d_4KFsnc-X4QjUs4MFQjxDf2xjilRd5XpxE-FaYsdfFQ25fPPIxnNXybIPzWKe-E5EhS-GOAULwgSGgJYzz4oBtwtl57LuAExtqbxq3VAgnKw"/>
+<button class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-sm text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-sm">favorite</span>
+</button>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg text-on-surface">Explorer's Magnifier</h3>
+<span class="font-black text-primary">$18.00</span>
+</div>
+<div class="flex items-center gap-2 mb-4">
+<div class="flex text-yellow-500">
+<span class="material-symbols-outlined text-sm filled-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm filled-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm filled-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm filled-icon" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm">star_half</span>
+</div>
+<span class="text-xs text-on-surface-variant font-medium">(56 reviews)</span>
+</div>
+<button class="w-full py-3 bg-surface-container-low text-on-primary-container font-bold rounded-xl group-hover:bg-primary group-hover:text-white transition-all">Add to Cart</button>
+</div>
+</div>
+<!-- Pagination/Load More -->
+<div class="mt-16 flex flex-col items-center">
+<p class="text-sm text-on-surface-variant mb-6 font-medium">Showing 6 of 48 products</p>
+<div class="flex gap-2">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all">Load More Essentials</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-100 dark:bg-slate-950 full-width mt-auto tonal-layering-no-border">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 w-full px-12 py-16 max-w-screen-2xl mx-auto">
+<div class="col-span-2 md:col-span-1">
+<span class="text-xl font-bold text-slate-800 dark:text-slate-200 block mb-4">Kids World</span>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed max-w-xs">
+                    Curating high-quality, sustainable, and educational play for the modern family.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-sm uppercase tracking-widest text-slate-800 dark:text-slate-200">Shop</h4>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-500 transition-colors text-sm" href="#">About Us</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-500 transition-colors text-sm" href="#">Sustainability</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-500 transition-colors text-sm" href="#">Parenting Guides</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-sm uppercase tracking-widest text-slate-800 dark:text-slate-200">Support</h4>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-500 transition-colors text-sm" href="#">Affiliate Disclosure</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-500 transition-colors text-sm" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-500 transition-colors text-sm" href="#">Contact</a>
+</div>
+<div class="flex flex-col gap-6">
+<h4 class="font-bold text-sm uppercase tracking-widest text-slate-800 dark:text-slate-200">Follow the Journey</h4>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-slate-500 hover:text-primary cursor-pointer transition-colors">public</span>
+<span class="material-symbols-outlined text-slate-500 hover:text-primary cursor-pointer transition-colors">hub</span>
+<span class="material-symbols-outlined text-slate-500 hover:text-primary cursor-pointer transition-colors">groups</span>
+</div>
+</div>
+</div>
+<div class="border-t border-slate-200/30 w-full px-12 py-8 max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
+<span>© 2024 Kids World. Curated with love for modern parents.</span>
+<div class="flex gap-6 mt-4 md:mt-0">
+<span>Made for play.</span>
+<span>Shipped with care.</span>
+</div>
+</div>
+</footer>
+</body></html>

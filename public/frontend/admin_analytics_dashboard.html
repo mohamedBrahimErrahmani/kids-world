@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kids World Admin - Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-container": "#625f36",
+                        "tertiary-dim": "#54512a",
+                        "tertiary-container": "#fef8c3",
+                        "surface-variant": "#dadddf",
+                        "on-secondary": "#dcfbdd",
+                        "error-dim": "#9f0519",
+                        "tertiary": "#605d34",
+                        "surface-container": "#e6e8ea",
+                        "on-secondary-container": "#3e5842",
+                        "primary-container": "#44a6f6",
+                        "background": "#f5f6f7",
+                        "primary-fixed-dim": "#3199e8",
+                        "primary-dim": "#005386",
+                        "secondary-fixed": "#cceacd",
+                        "on-primary": "#ecf3ff",
+                        "inverse-on-surface": "#9b9d9e",
+                        "outline-variant": "#abadae",
+                        "on-primary-container": "#00253f",
+                        "secondary": "#47624b",
+                        "on-tertiary-fixed": "#4f4d26",
+                        "on-primary-fixed": "#000000",
+                        "on-primary-fixed-variant": "#002e4e",
+                        "surface-container-low": "#eff1f2",
+                        "error": "#b31b25",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#d1d5d7",
+                        "surface-tint": "#005f99",
+                        "primary-fixed": "#44a6f6",
+                        "on-background": "#2c2f30",
+                        "inverse-surface": "#0c0f10",
+                        "surface-container-highest": "#dadddf",
+                        "surface": "#f5f6f7",
+                        "outline": "#757778",
+                        "on-error": "#ffefee",
+                        "error-container": "#fb5151",
+                        "on-surface-variant": "#595c5d",
+                        "surface-bright": "#f5f6f7",
+                        "primary": "#005f99",
+                        "on-secondary-fixed": "#2c4530",
+                        "surface-container-high": "#e0e3e4",
+                        "secondary-fixed-dim": "#bedcbf",
+                        "on-surface": "#2c2f30",
+                        "tertiary-fixed": "#fef8c3",
+                        "inverse-primary": "#40a4f4",
+                        "on-tertiary-fixed-variant": "#6d6940",
+                        "on-tertiary": "#faf5c0",
+                        "secondary-container": "#cceacd",
+                        "on-secondary-fixed-variant": "#47624b",
+                        "secondary-dim": "#3c5640",
+                        "tertiary-fixed-dim": "#f0eab6",
+                        "on-error-container": "#570008"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Be Vietnam Pro"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f5f6f7;
+            color: #2c2f30;
+        }
+        .chart-gradient-blue {
+            background: linear-gradient(180deg, rgba(68, 166, 246, 0.1) 0%, rgba(68, 166, 246, 0) 100%);
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary-container selection:text-on-primary-container">
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 border-r-0 rounded-r-3xl sticky top-0 left-0 bg-slate-50 dark:bg-slate-900 flex flex-col p-4 z-50">
+<div class="mb-8 px-4 py-2">
+<h1 class="text-xl font-bold text-slate-800 dark:text-white tracking-tighter font-headline">Kids World</h1>
+<p class="text-xs text-slate-500 font-medium">Affiliate Platform</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 font-['Plus_Jakarta_Sans'] font-medium text-sm tracking-tight hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                    Dashboard
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 font-['Plus_Jakarta_Sans'] font-medium text-sm tracking-tight hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+                    Products
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 font-['Plus_Jakarta_Sans'] font-medium text-sm tracking-tight hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+                    Categories
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 font-['Plus_Jakarta_Sans'] font-medium text-sm tracking-tight hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="article">article</span>
+                    Blog
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 font-['Plus_Jakarta_Sans'] font-medium text-sm tracking-tight hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="movie_filter">movie_filter</span>
+                    TikTok Tracker
+                </a>
+<!-- Active Item -->
+<a class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-slate-800 text-blue-600 dark:text-blue-400 rounded-xl shadow-sm font-['Plus_Jakarta_Sans'] font-medium text-sm tracking-tight transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="analytics" style="font-variation-settings: 'FILL' 1;">analytics</span>
+                    Analytics
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 font-['Plus_Jakarta_Sans'] font-medium text-sm tracking-tight hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                    Users
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 font-['Plus_Jakarta_Sans'] font-medium text-sm tracking-tight hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                    Settings
+                </a>
+</nav>
+<div class="mt-auto p-4 bg-blue-600 rounded-2xl text-white">
+<p class="text-xs font-semibold mb-2 opacity-80">PRO PLAN</p>
+<p class="text-sm font-bold leading-tight mb-4">Unlock advanced affiliate insights</p>
+<button class="w-full py-2 bg-white text-blue-600 rounded-lg text-xs font-bold hover:bg-blue-50 transition-colors">Upgrade Plan</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-w-0">
+<!-- TopNavBar -->
+<header class="w-full h-16 sticky top-0 z-40 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md flex justify-between items-center px-8 shadow-sm shadow-blue-900/5">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-highest border-none rounded-xl text-sm focus:ring-2 focus:ring-blue-100 transition-all font-body" placeholder="Search analytics..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-slate-500">
+<button class="hover:text-blue-500 transition-colors flex items-center">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="hover:text-blue-500 transition-colors flex items-center">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-surface-container mx-2"></div>
+<div class="flex items-center gap-3">
+<span class="text-sm font-semibold text-slate-700">Profile</span>
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Admin user profile headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDxoQOOzvKeaxxf000EQL1Mvi2vAV1fGD4eFO0TOSy9lpF2iz9YQgCzYDoTHr2120d1B4xx3dKKoDcj26kP9tr_MkMtglvZHjWvjoB1LtYXKB_kkLAP_GjbkhOkhiImjBpDmuKcpz-P9UMYR04VnkfGBlokhjV9Fn2kw_zI0cwSO1hpnmv28YSniNT5YXzmD4IiD7XTc-G-mpacMVU-7kUV4qiFoXw6OqkQ_jcWLLqQRhs8EDk3TlFmNoQ6wmrN_-BwC_jWmgjcg"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="p-8 space-y-8">
+<!-- Page Title & Date Filter -->
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-3xl font-extrabold font-headline tracking-tight text-on-surface">Analytics Overview</h2>
+<p class="text-on-surface-variant font-body">Real-time performance tracking for Kids World ecosystem.</p>
+</div>
+<div class="flex gap-2 bg-surface-container-low p-1.5 rounded-xl">
+<button class="px-4 py-1.5 text-xs font-bold rounded-lg bg-surface-container-lowest shadow-sm text-primary">Last 30 Days</button>
+<button class="px-4 py-1.5 text-xs font-bold rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors">Last Quarter</button>
+<button class="px-4 py-1.5 text-xs font-bold rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors">Custom Range</button>
+</div>
+</div>
+<!-- Bento Grid Section -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Conversion Tracking (Large Chart) -->
+<div class="col-span-8 bg-surface-container-lowest rounded-xl p-6 shadow-sm shadow-blue-900/5">
+<div class="flex justify-between items-start mb-8">
+<div>
+<h3 class="font-bold text-lg font-headline">Conversion Rates</h3>
+<p class="text-xs text-on-surface-variant">Purchase intent vs. Actual checkouts</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Conversions</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary-container"></span>
+<span class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Clicks</span>
+</div>
+</div>
+</div>
+<!-- Simulated Chart Area -->
+<div class="h-64 relative flex items-end gap-1">
+<div class="flex-1 bg-surface-container-low rounded-t-lg h-[40%] group relative">
+<div class="absolute inset-0 bg-primary opacity-20 rounded-t-lg group-hover:opacity-40 transition-opacity"></div>
+<div class="absolute bottom-0 w-full bg-primary h-[60%] rounded-t-lg"></div>
+</div>
+<div class="flex-1 bg-surface-container-low rounded-t-lg h-[65%] group relative">
+<div class="absolute inset-0 bg-primary opacity-20 rounded-t-lg group-hover:opacity-40 transition-opacity"></div>
+<div class="absolute bottom-0 w-full bg-primary h-[55%] rounded-t-lg"></div>
+</div>
+<div class="flex-1 bg-surface-container-low rounded-t-lg h-[55%] group relative">
+<div class="absolute inset-0 bg-primary opacity-20 rounded-t-lg group-hover:opacity-40 transition-opacity"></div>
+<div class="absolute bottom-0 w-full bg-primary h-[70%] rounded-t-lg"></div>
+</div>
+<div class="flex-1 bg-surface-container-low rounded-t-lg h-[80%] group relative">
+<div class="absolute inset-0 bg-primary opacity-20 rounded-t-lg group-hover:opacity-40 transition-opacity"></div>
+<div class="absolute bottom-0 w-full bg-primary h-[65%] rounded-t-lg"></div>
+</div>
+<div class="flex-1 bg-surface-container-low rounded-t-lg h-[90%] group relative">
+<div class="absolute inset-0 bg-primary opacity-20 rounded-t-lg group-hover:opacity-40 transition-opacity"></div>
+<div class="absolute bottom-0 w-full bg-primary h-[80%] rounded-t-lg"></div>
+</div>
+<div class="flex-1 bg-surface-container-low rounded-t-lg h-[75%] group relative">
+<div class="absolute inset-0 bg-primary opacity-20 rounded-t-lg group-hover:opacity-40 transition-opacity"></div>
+<div class="absolute bottom-0 w-full bg-primary h-[40%] rounded-t-lg"></div>
+</div>
+<div class="flex-1 bg-surface-container-low rounded-t-lg h-[60%] group relative">
+<div class="absolute inset-0 bg-primary opacity-20 rounded-t-lg group-hover:opacity-40 transition-opacity"></div>
+<div class="absolute bottom-0 w-full bg-primary h-[50%] rounded-t-lg"></div>
+</div>
+</div>
+<div class="flex justify-between mt-4 px-2 text-[10px] font-bold text-on-surface-variant font-label">
+<span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
+</div>
+</div>
+<!-- Device Type (Mobile vs Desktop) -->
+<div class="col-span-4 bg-surface-container-lowest rounded-xl p-6 shadow-sm shadow-blue-900/5 flex flex-col">
+<h3 class="font-bold text-lg font-headline mb-1">Device Split</h3>
+<p class="text-xs text-on-surface-variant mb-8">User traffic by hardware</p>
+<div class="flex-1 flex flex-col justify-center items-center">
+<!-- Donut Chart Simulated -->
+<div class="relative w-40 h-40 rounded-full border-[16px] border-primary-container flex items-center justify-center">
+<div class="absolute inset-[-16px] w-40 h-40 rounded-full border-[16px] border-primary border-t-transparent border-l-transparent -rotate-45"></div>
+<div class="text-center">
+<p class="text-2xl font-black font-headline">72%</p>
+<p class="text-[10px] uppercase font-bold text-on-surface-variant">Mobile</p>
+</div>
+</div>
+</div>
+<div class="mt-8 space-y-3">
+<div class="flex justify-between items-center text-sm">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-medium">Mobile Apps</span>
+</div>
+<span class="font-bold">72.4%</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-medium">Desktop Web</span>
+</div>
+<span class="font-bold">21.1%</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+<span class="font-medium">Tablets</span>
+</div>
+<span class="font-bold">6.5%</span>
+</div>
+</div>
+</div>
+<!-- Click Tracking Detailed Table -->
+<div class="col-span-12 bg-surface-container-lowest rounded-xl shadow-sm shadow-blue-900/5 overflow-hidden">
+<div class="p-6 flex justify-between items-center">
+<div>
+<h3 class="font-bold text-lg font-headline">Product Click Performance</h3>
+<p class="text-xs text-on-surface-variant">Detailed tracking per affiliate item</p>
+</div>
+<button class="text-xs font-bold text-primary flex items-center gap-1 hover:underline">
+                                Export CSV <span class="material-symbols-outlined text-sm">download</span>
+</button>
+</div>
+<table class="w-full text-left">
+<thead class="bg-surface-container-low text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">
+<tr>
+<th class="px-6 py-4">Product Name</th>
+<th class="px-6 py-4">Category</th>
+<th class="px-6 py-4">Unique Clicks</th>
+<th class="px-6 py-4">Trend (7d)</th>
+<th class="px-6 py-4">Conv. Rate</th>
+<th class="px-6 py-4 text-right">Revenue</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Educational wooden toy blocks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsrMTGJeU7s5Tsg_EIDEQlyKFTbmA4vBgvgjXfRuyMCJr--st8OdqXjj0tsrC0I6SJIodV7GM_GeE8PtppXJECDWgPCMcCyTzUXCIV8tFMhgQ7NP1wgIhQhwi8APy9uen97g3CPDLc7ACoXKhWkCutkAooRnj5y_gKKk4FOUEsuPkNj9jXgUijNcOGfSv2-RqOzjJb_JTkGP0hiZLrJ7f6zCloJP7fvia68DqYIafQEM4z8OfefMF7HY3bZQjsuF5gAQaBXbvqRA"/>
+</div>
+<span class="text-sm font-semibold">Eco-Wooden Blocks Set</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-medium text-on-surface-variant">STEM Toys</td>
+<td class="px-6 py-4 text-sm font-bold">12,402</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1 text-green-600 font-bold text-xs">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                                            +14.2%
+                                        </div>
+</td>
+<td class="px-6 py-4">
+<div class="w-24 h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[35%] rounded-full"></div>
+</div>
+</td>
+<td class="px-6 py-4 text-right font-black text-sm">$4,290.00</td>
+</tr>
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Nursery room decorative light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8cXyUyvemXKHgrkYC0d5hCrrEj_TOg0VoRXl4A1QuvrLzNoY14JKiXbSnrS3su3WNtbvJYJs89pE_Ik4oKraOSy2bsj5izvBwxx1mldn7zpZKs0FUmClxaEJQv_k9BbN84Bd0RsHPUg5rEym2iu19ITKm9_q4gmoHnf7F3lKHBvCyYqNw_CK8bvm42_iElNaBpfy6zqY5HBas4zBrKN8tO-IhmsD-UBN6qwWG45Sap3V2Xx1Bf7fo3FlkB6SHGW8Warrh2wF2dg"/>
+</div>
+<span class="text-sm font-semibold">Moonlight Nursery Lamp</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-medium text-on-surface-variant">Decor</td>
+<td class="px-6 py-4 text-sm font-bold">8,912</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1 text-error font-bold text-xs">
+<span class="material-symbols-outlined text-sm">trending_down</span>
+                                            -2.4%
+                                        </div>
+</td>
+<td class="px-6 py-4">
+<div class="w-24 h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[18%] rounded-full"></div>
+</div>
+</td>
+<td class="px-6 py-4 text-right font-black text-sm">$1,150.40</td>
+</tr>
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Colorful baby clothing outfit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjvOlmruIIlkYntaQKgztHUyKK0djCwj9b2jU0x2hTk66u58MG7WlYLvDuBdtckqz6SM4RsQDFEoWs0qvGEryMgxjnlGG1yTR5nvdsNMY9ckPLnpFd02UzcdGU863DZ4HGJ76_GVVyJ2ytnFIq3OnBbLJvunGziXn-sszuPAZfqjtodvqtjoSWwrhHn5W5aZG8kecw6bjRovEhEwUoQ90muHa3wIE1hBu7ZZC3ySRLz60XiBZiQJWKXoB5fXNB-uzMTjCHlLW9vA"/>
+</div>
+<span class="text-sm font-semibold">Organic Cotton Romper</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm font-medium text-on-surface-variant">Apparel</td>
+<td class="px-6 py-4 text-sm font-bold">24,560</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-1 text-green-600 font-bold text-xs">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                                            +28.9%
+                                        </div>
+</td>
+<td class="px-6 py-4">
+<div class="w-24 h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[52%] rounded-full"></div>
+</div>
+</td>
+<td class="px-6 py-4 text-right font-black text-sm">$8,122.15</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- User Behavior Flow (Simplified Diagram) -->
+<div class="col-span-7 bg-surface-container-lowest rounded-xl p-6 shadow-sm shadow-blue-900/5">
+<h3 class="font-bold text-lg font-headline mb-1">User Journey Flow</h3>
+<p class="text-xs text-on-surface-variant mb-8">Main paths from entry to checkout</p>
+<div class="flex items-center justify-between gap-4">
+<!-- Node 1 -->
+<div class="flex-1 text-center">
+<div class="bg-surface-container p-4 rounded-xl border-t-4 border-primary shadow-sm">
+<p class="text-[10px] font-bold uppercase text-on-surface-variant">Blog Article</p>
+<p class="text-lg font-black">65%</p>
+</div>
+</div>
+<!-- Arrow -->
+<div class="text-primary-container"><span class="material-symbols-outlined">trending_flat</span></div>
+<!-- Node 2 -->
+<div class="flex-1 text-center">
+<div class="bg-surface-container p-4 rounded-xl border-t-4 border-primary shadow-sm">
+<p class="text-[10px] font-bold uppercase text-on-surface-variant">Product Page</p>
+<p class="text-lg font-black">42%</p>
+</div>
+</div>
+<!-- Arrow -->
+<div class="text-primary-container"><span class="material-symbols-outlined">trending_flat</span></div>
+<!-- Node 3 -->
+<div class="flex-1 text-center">
+<div class="bg-surface-container-high p-4 rounded-xl border-t-4 border-primary-container shadow-sm">
+<p class="text-[10px] font-bold uppercase text-on-surface-variant">Checkout</p>
+<p class="text-lg font-black">12%</p>
+</div>
+</div>
+</div>
+<div class="mt-12 p-4 bg-tertiary-container rounded-xl flex items-center gap-4">
+<span class="material-symbols-outlined text-on-tertiary-container">lightbulb</span>
+<p class="text-xs font-medium text-on-tertiary-container">Insight: Users who visit the "TikTok Trends" blog are 4x more likely to complete a purchase within 24 hours.</p>
+</div>
+</div>
+<!-- Top Visited Pages List -->
+<div class="col-span-5 bg-surface-container-lowest rounded-xl p-6 shadow-sm shadow-blue-900/5">
+<h3 class="font-bold text-lg font-headline mb-4">Top Visited Pages</h3>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center text-[10px] font-bold">1</span>
+<div>
+<p class="text-sm font-bold">/gift-guides/stem-toys-2024</p>
+<p class="text-[10px] text-on-surface-variant">Gift Guides</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-black">45.2k</p>
+<p class="text-[10px] text-green-600 font-bold">+12%</p>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center text-[10px] font-bold">2</span>
+<div>
+<p class="text-sm font-bold">/categories/nursery-decor</p>
+<p class="text-[10px] text-on-surface-variant">Categories</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-black">38.1k</p>
+<p class="text-[10px] text-on-surface-variant font-bold">0%</p>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center text-[10px] font-bold">3</span>
+<div>
+<p class="text-sm font-bold">/deals/weekly-favorites</p>
+<p class="text-[10px] text-on-surface-variant">Landing Pages</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-black">31.9k</p>
+<p class="text-[10px] text-green-600 font-bold">+5%</p>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center text-[10px] font-bold">4</span>
+<div>
+<p class="text-sm font-bold">/tiktok-tracker/trending-now</p>
+<p class="text-[10px] text-on-surface-variant">TikTok Tracker</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-black">28.4k</p>
+<p class="text-[10px] text-error font-bold">-3%</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 py-2 border border-surface-container rounded-xl text-xs font-bold text-on-surface-variant hover:bg-surface-container-low transition-colors">View All Pages</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

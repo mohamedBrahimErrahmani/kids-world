@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be_Vietnam_Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#e6e8ea",
+              "on-error": "#ffefee",
+              "on-error-container": "#570008",
+              "on-tertiary-container": "#625f36",
+              "primary-fixed": "#44a6f6",
+              "on-primary-fixed-variant": "#002e4e",
+              "primary-container": "#44a6f6",
+              "on-secondary": "#dcfbdd",
+              "tertiary-dim": "#54512a",
+              "on-surface-variant": "#595c5d",
+              "tertiary-container": "#fef8c3",
+              "on-tertiary-fixed-variant": "#6d6940",
+              "surface-container-low": "#eff1f2",
+              "on-secondary-container": "#3e5842",
+              "secondary-container": "#cceacd",
+              "primary-fixed-dim": "#3199e8",
+              "surface-variant": "#dadddf",
+              "primary-dim": "#005386",
+              "secondary": "#47624b",
+              "on-surface": "#2c2f30",
+              "background": "#f5f6f7",
+              "tertiary-fixed-dim": "#f0eab6",
+              "surface-tint": "#005f99",
+              "outline": "#757778",
+              "secondary-fixed": "#cceacd",
+              "error-container": "#fb5151",
+              "tertiary": "#605d34",
+              "surface-container-high": "#e0e3e4",
+              "inverse-surface": "#0c0f10",
+              "on-background": "#2c2f30",
+              "inverse-on-surface": "#9b9d9e",
+              "surface-container-lowest": "#ffffff",
+              "inverse-primary": "#40a4f4",
+              "error-dim": "#9f0519",
+              "outline-variant": "#abadae",
+              "on-secondary-fixed": "#2c4530",
+              "on-primary": "#ecf3ff",
+              "secondary-dim": "#3c5640",
+              "error": "#b31b25",
+              "surface": "#f5f6f7",
+              "primary": "#005f99",
+              "on-secondary-fixed-variant": "#47624b",
+              "tertiary-fixed": "#fef8c3",
+              "on-primary-fixed": "#000000",
+              "on-tertiary-fixed": "#4f4d26",
+              "on-primary-container": "#00253f",
+              "surface-dim": "#d1d5d7",
+              "secondary-fixed-dim": "#bedcbf",
+              "surface-container-highest": "#dadddf",
+              "on-tertiary": "#faf5c0",
+              "surface-bright": "#f5f6f7"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Be Vietnam Pro"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Be Vietnam Pro', sans-serif; }
+        h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface selection:bg-primary-container/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-sky-700 dark:text-sky-400">search</span>
+<span class="text-2xl font-black text-sky-800 dark:text-sky-300 tracking-tighter">Kids World</span>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-sky-600 transition-colors" href="#">Home</a>
+<a class="text-sky-700 dark:text-sky-400 font-bold border-b-2 border-sky-600 transition-colors" href="#">Categories</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-sky-600 transition-colors" href="#">Trending</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-sky-600 transition-colors" href="#">Guides</a>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-white overflow-hidden border-2 border-white shadow-sm">
+<img alt="Parent Profile" data-alt="Close up portrait of a smiling woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFuC4PcyeAY_9TLxzJ3OgdkGj0gIRx7E5iO03W-2tPAdoTdlnRn2iG-ZybAb-au-2Gzn6bc1TgTsAIC8vhxY0KZMsn8Mbr6bneq_VzLLG3sz8cBqpqC00d3jY9sSL4ANhJKu3y1-_2mpnO7TdJPShNC-FbhhEKEiyHJnaY1M8AlNiiiQCwLNrYEqQPVki8i8LVrEmPWqjdh558Ue0RZ7le5daLbboadKM3KJbsyYg2rE1Ctk9OWGBYkECe9Oasfc-q4Lt2XWxqBg"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-4 md:px-8 max-w-7xl mx-auto">
+<!-- Editorial Header Section -->
+<section class="mb-12">
+<div class="bg-surface-container-low rounded-xl p-8 md:p-12 relative overflow-hidden">
+<div class="relative z-10 max-w-2xl">
+<span class="inline-block bg-tertiary-container text-on-tertiary-container text-[11px] font-bold uppercase tracking-[0.15em] px-4 py-1.5 rounded-full mb-6">Curated Selection</span>
+<h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-on-surface mb-4 leading-[1.1]">The Modern Toy Box</h1>
+<p class="text-on-surface-variant text-lg leading-relaxed max-w-lg">Thoughtfully curated essentials designed to spark curiosity, movement, and joy. No clutter, just high-quality play.</p>
+</div>
+<div class="absolute right-[-5%] bottom-[-10%] md:bottom-[-20%] w-1/2 opacity-20 md:opacity-100 mix-blend-multiply pointer-events-none">
+<img alt="Abstract Toy Shapes" data-alt="Soft colored geometric wooden building blocks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCipRO4oav-uTqobintGkoVAyC2W6qt7kpXSRqnL1i2qeofM9LV83wibEO40r3oa_9sZALrKsPZmT7pbULPRUc5CBFvr0boCulTqiqzx1XErp8zDL-9m5n_hazcX6JClneGlI56xEMwsCU05ab12xsvCBhPeHS1M77kAV21CS7ETJgOdc7iQ9sO5D3YE5K_rzdGxO15sJ6aCchEks2ZRuEB50lzU6IP2jSvbFnydZ-XAXgtcG87giRTiiQp_AfFSFzaKnn8Sn_0XA"/>
+</div>
+</div>
+</section>
+<!-- Filters Section -->
+<section class="sticky top-[80px] z-40 mb-10 bg-background/90 backdrop-blur-md py-4">
+<div class="flex flex-col gap-6">
+<!-- Age Filter -->
+<div class="flex flex-col gap-3">
+<label class="font-headline font-bold text-sm tracking-wide text-on-surface-variant uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">child_care</span>
+                        Shop by Age
+                    </label>
+<div class="flex gap-3 overflow-x-auto no-scrollbar pb-1">
+<button class="flex-shrink-0 px-6 py-2.5 rounded-full bg-surface-container-lowest border border-outline-variant/20 text-on-surface font-semibold hover:bg-primary-container hover:text-white transition-all">0-1 Years</button>
+<button class="flex-shrink-0 px-6 py-2.5 rounded-full bg-primary text-white font-semibold shadow-md">2-3 Years</button>
+<button class="flex-shrink-0 px-6 py-2.5 rounded-full bg-surface-container-lowest border border-outline-variant/20 text-on-surface font-semibold hover:bg-primary-container hover:text-white transition-all">4-6 Years</button>
+<button class="flex-shrink-0 px-6 py-2.5 rounded-full bg-surface-container-lowest border border-outline-variant/20 text-on-surface font-semibold hover:bg-primary-container hover:text-white transition-all">7+ Years</button>
+</div>
+</div>
+<!-- Type Filter -->
+<div class="flex flex-col gap-3">
+<label class="font-headline font-bold text-sm tracking-wide text-on-surface-variant uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">category</span>
+                        Play Type
+                    </label>
+<div class="flex gap-3 overflow-x-auto no-scrollbar pb-1">
+<button class="flex-shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-xl bg-secondary-container text-on-secondary-container font-medium">
+<span class="material-symbols-outlined text-[20px]">school</span> Educational
+                        </button>
+<button class="flex-shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-xl bg-surface-container-lowest text-on-surface font-medium border border-outline-variant/10">
+<span class="material-symbols-outlined text-[20px]">celebration</span> Fun &amp; Games
+                        </button>
+<button class="flex-shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-xl bg-surface-container-lowest text-on-surface font-medium border border-outline-variant/10">
+<span class="material-symbols-outlined text-[20px]">forest</span> Outdoor
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
+<!-- Card 1 -->
+<div class="group flex flex-col gap-3">
+<div class="relative aspect-[4/5] bg-surface-container-low rounded-lg md:rounded-xl overflow-hidden shadow-sm transition-transform duration-500 group-hover:scale-[1.02]">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-primary text-white text-[10px] md:text-[11px] font-bold px-3 py-1 rounded-full flex items-center gap-1 shadow-lg">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                            TRENDING
+                        </span>
+</div>
+<img alt="Wooden Blocks" class="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-90" data-alt="Minimalist colorful wooden building blocks stacked" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzgmVtiI6sGdYH9Qn-jgDZi3qNVpmC17Xc7gbsF7zzdAWnNNnMgP2uhWpdXt8rw1JOsqPCrq-EYrm2sRV2duWBb1KjUOjGz4kEySJyz4WXux333g5tqXIjyrD7VEdNrBCuaMtNncOYSA9hbHYYpVUrAu9K8MHgFiv15qqM_quRjtkwdS8Sg78HgGhU9GgulizGRNdKHbwYNlJQQ7niX_E9XB3gTqTKgNMYyP1lHyosqcXA4DBknbLT47lGtBY3zlFtBQzMHnniIw"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md text-primary font-bold py-3 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2">
+                        BUY NOW
+                        <span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+</button>
+</div>
+<div class="px-1">
+<div class="flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-yellow-500 text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[12px] font-bold text-on-surface">4.9</span>
+<span class="text-[12px] text-on-surface-variant ml-1">(124)</span>
+</div>
+<h3 class="text-on-surface font-bold text-sm md:text-base leading-tight mb-1 group-hover:text-primary transition-colors">Nordic Pine Discovery Blocks</h3>
+<p class="text-primary-dim font-black text-lg">$45.00</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group flex flex-col gap-3">
+<div class="relative aspect-[4/5] bg-surface-container-low rounded-lg md:rounded-xl overflow-hidden shadow-sm transition-transform duration-500 group-hover:scale-[1.02]">
+<img alt="Soft Plush" class="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-90" data-alt="A soft cream colored plush teddy bear" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALCoklgGmCVkwheGwtu0nlvRBva33lhMMQWKsqM4TVmFlDr4NJF_FpZLZPLWI6HDoxfOMHYsZg2YUn1-lSWtMwqHVW_y4Se7Eom4Oy47zqJE47ABscY2GnrrKlAIkN3B16NGYQn7QmWx4f_Pcpw9TIabbC1kfePb7DXcJJpTkd1SIFzvMdm7h0zB-ufGiQpWR5_n000Q73l2eqBimoaqg7xOsWjL6eGuF26rEfZTsEq107_vGnt7iR7nL7oB8ONHQrKaicU7YNJQ"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md text-primary font-bold py-3 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2">
+                        BUY NOW
+                        <span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+</button>
+</div>
+<div class="px-1">
+<div class="flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-yellow-500 text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[12px] font-bold text-on-surface">4.8</span>
+<span class="text-[12px] text-on-surface-variant ml-1">(89)</span>
+</div>
+<h3 class="text-on-surface font-bold text-sm md:text-base leading-tight mb-1 group-hover:text-primary transition-colors">Organic Cotton Sleepy Bear</h3>
+<p class="text-primary-dim font-black text-lg">$32.00</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group flex flex-col gap-3">
+<div class="relative aspect-[4/5] bg-surface-container-low rounded-lg md:rounded-xl overflow-hidden shadow-sm transition-transform duration-500 group-hover:scale-[1.02]">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-primary text-white text-[11px] font-bold px-3 py-1 rounded-full flex items-center gap-1 shadow-lg">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                            TRENDING
+                        </span>
+</div>
+<img alt="Logic Game" class="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-90" data-alt="Educational wooden puzzle toy with bright colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFw3BqSabSSoRtwLcJCjDE0YbaExD60_jD-rlXgr9MkxBHAGFSfh-HJMFCohlRK1YsRkGiFX_bNnWuk6Vn13NMe52efvJvb-jsF7lI-7GQ5CQ-47TVqV-RdXHvL_pqv6CenBuXMmOPKyZ4W-YPByb7CjLY4gN2PlYITm7vSlEWAvoQZGWMuaV2eXle1ir6O1A7iYTc6l1pW8uNVnoHU5M5cizb6_N6VqK-eT0IocyiqU8IUWAq2SHoMl9D2VyjggDVDGs4Rrx-Kw"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md text-primary font-bold py-3 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2">
+                        BUY NOW
+                        <span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+</button>
+</div>
+<div class="px-1">
+<div class="flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-yellow-500 text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[12px] font-bold text-on-surface">5.0</span>
+<span class="text-[12px] text-on-surface-variant ml-1">(256)</span>
+</div>
+<h3 class="text-on-surface font-bold text-sm md:text-base leading-tight mb-1 group-hover:text-primary transition-colors">Cognitive Stacking Tower</h3>
+<p class="text-primary-dim font-black text-lg">$28.50</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group flex flex-col gap-3">
+<div class="relative aspect-[4/5] bg-surface-container-low rounded-lg md:rounded-xl overflow-hidden shadow-sm transition-transform duration-500 group-hover:scale-[1.02]">
+<img alt="Art Kit" class="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-90" data-alt="Art supplies for kids including crayons and paper" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuZFfcrsLMEI-2-n2My92TOQwLppDhA90ujLdgVrhWXxEQZyPlSEhmkVPSuokpybsVibb-TUD-II-Bw0O_Co3yEdUeotBI36ADYkHLzy5Qjs6coXF3BnzahJ-wulG4ODglULvcIN5p2xFasSUdB5kySa6gk6qzUDLE0KDTtyOvQ5S681cd01tt4Gf_LeBGjcJTO_ks3zZF1Cyn248L9Tf3Upf80UX4gmPEEOklcIWIg6I0g72qioAXqqfIAjK7MivE6Kq58MQ8_A"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md text-primary font-bold py-3 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2">
+                        BUY NOW
+                        <span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+</button>
+</div>
+<div class="px-1">
+<div class="flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-yellow-500 text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[12px] font-bold text-on-surface">4.7</span>
+<span class="text-[12px] text-on-surface-variant ml-1">(42)</span>
+</div>
+<h3 class="text-on-surface font-bold text-sm md:text-base leading-tight mb-1 group-hover:text-primary transition-colors">Mess-Free Canvas Explorer</h3>
+<p class="text-primary-dim font-black text-lg">$54.00</p>
+</div>
+</div>
+<!-- Card 5 (Asymmetric Offset on Desktop) -->
+<div class="group flex flex-col gap-3 md:mt-8">
+<div class="relative aspect-[4/5] bg-surface-container-low rounded-lg md:rounded-xl overflow-hidden shadow-sm transition-transform duration-500 group-hover:scale-[1.02]">
+<img alt="Building Toy" class="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-90" data-alt="Geometric building blocks in primary colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeOdCzKDF0vjk1BcQwzvKLCiwtxefRP0gJhIawJWiYUQMeGmFCLljeGXcMT8KlfGiUvrICK5Px1aurMqYy6yTvU7IjR2HndKvz15GojTu4B6SIOxTsK3VywDzgWA0Bh97pBPqvbjDtR8Kr4Ixwoq_CN2BW2SeekOEEErA9tltjuwXFmKrGVb3Zonk6AdQbGRFZBlpqGQSxAG7fal_CegorEoqylUbmMePesKDww0fD7FDWNnXieE0UFukNhvj640HzD4P6OJhbFg"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md text-primary font-bold py-3 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2">
+                        BUY NOW
+                        <span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+</button>
+</div>
+<div class="px-1">
+<div class="flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-yellow-500 text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[12px] font-bold text-on-surface">4.6</span>
+<span class="text-[12px] text-on-surface-variant ml-1">(18)</span>
+</div>
+<h3 class="text-on-surface font-bold text-sm md:text-base leading-tight mb-1 group-hover:text-primary transition-colors">Architect Tiny Home Kit</h3>
+<p class="text-primary-dim font-black text-lg">$68.00</p>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="group flex flex-col gap-3 md:mt-8">
+<div class="relative aspect-[4/5] bg-surface-container-low rounded-lg md:rounded-xl overflow-hidden shadow-sm transition-transform duration-500 group-hover:scale-[1.02]">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-primary text-white text-[11px] font-bold px-3 py-1 rounded-full flex items-center gap-1 shadow-lg">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                            TRENDING
+                        </span>
+</div>
+<img alt="Tech Toy" class="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-90" data-alt="A small white robot toy for children" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiRqoRBhUSXH-gsuPAZ2yw1EMiQVP_z20YIkjA--cMvs94-NZWMOTZwVfU4NdzpfUeKSd46vR8nF7-_kzQLiNgEURbHicb_K7Y9DBa-n-GEfJ4cJOGLwfRN17nWIc4ZIpnzv7LePiaLKmY8D4WUrQLSKUuqOQ7NzvMaHZobDt9RYVogWY4oxgdlpTvIpu8M41xBUG2NTciDU00Jyo7UbWxMtw12PCMBituxDG8MNmC5FJaxOv9Sq4jFW3sa4Wfjjs-aKe1ERKSOA"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md text-primary font-bold py-3 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2">
+                        BUY NOW
+                        <span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+</button>
+</div>
+<div class="px-1">
+<div class="flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-yellow-500 text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[12px] font-bold text-on-surface">4.9</span>
+<span class="text-[12px] text-on-surface-variant ml-1">(312)</span>
+</div>
+<h3 class="text-on-surface font-bold text-sm md:text-base leading-tight mb-1 group-hover:text-primary transition-colors">Alpha-Bot Coding Buddy</h3>
+<p class="text-primary-dim font-black text-lg">$120.00</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg shadow-[0_-10px_40px_rgba(0,0,0,0.05)] rounded-t-[3rem] z-50">
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2">
+<span class="material-symbols-outlined">home_app_logo</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold uppercase tracking-wider mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-sky-100 dark:bg-sky-900/40 text-sky-800 dark:text-sky-200 rounded-[2rem] px-5 py-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold uppercase tracking-wider mt-1">Categories</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold uppercase tracking-wider mt-1">Trending</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold uppercase tracking-wider mt-1">Guides</span>
+</div>
+</nav>
+<!-- Footer (Web Only / Hidden on Mobile nav context) -->
+<footer class="w-full py-12 px-8 mt-20 bg-slate-50 dark:bg-slate-950 border-t border-slate-200/50 dark:border-slate-800/50">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 max-w-7xl mx-auto">
+<div class="text-center md:text-left">
+<span class="text-lg font-bold text-slate-800 dark:text-slate-200">Kids World</span>
+<p class="font-['Be_Vietnam_Pro'] text-sm leading-relaxed text-slate-500 dark:text-slate-400 mt-2">© 2026 Kids World. High-End Editorial Curations for Parents.</p>
+</div>
+<div class="flex gap-6 flex-wrap justify-center">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-sky-800 transition-colors" href="#">About Us</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-sky-800 transition-colors" href="#">Affiliate Disclosure</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-sky-800 transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-sky-800 transition-colors" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

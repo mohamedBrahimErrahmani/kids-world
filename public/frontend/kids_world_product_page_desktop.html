@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kids World | Premium Curated Playrooms</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-dim": "#005386",
+              "primary": "#005f99",
+              "surface-variant": "#dadddf",
+              "error": "#b31b25",
+              "secondary": "#47624b",
+              "on-error": "#ffefee",
+              "surface-container-low": "#eff1f2",
+              "on-surface-variant": "#595c5d",
+              "error-dim": "#9f0519",
+              "error-container": "#fb5151",
+              "secondary-fixed-dim": "#bedcbf",
+              "primary-fixed-dim": "#3199e8",
+              "on-primary-fixed-variant": "#002e4e",
+              "primary-fixed": "#44a6f6",
+              "on-primary-container": "#00253f",
+              "secondary-fixed": "#cceacd",
+              "secondary-container": "#cceacd",
+              "surface-tint": "#005f99",
+              "on-tertiary-container": "#625f36",
+              "on-secondary": "#dcfbdd",
+              "primary-container": "#44a6f6",
+              "outline": "#757778",
+              "tertiary-fixed-dim": "#f0eab6",
+              "on-primary": "#ecf3ff",
+              "on-tertiary-fixed-variant": "#6d6940",
+              "on-background": "#2c2f30",
+              "surface-bright": "#f5f6f7",
+              "on-surface": "#2c2f30",
+              "surface": "#f5f6f7",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-container": "#fef8c3",
+              "inverse-on-surface": "#9b9d9e",
+              "on-secondary-container": "#3e5842",
+              "tertiary-dim": "#54512a",
+              "secondary-dim": "#3c5640",
+              "inverse-surface": "#0c0f10",
+              "surface-container-high": "#e0e3e4",
+              "on-tertiary-fixed": "#4f4d26",
+              "surface-container": "#e6e8ea",
+              "surface-dim": "#d1d5d7",
+              "on-secondary-fixed": "#2c4530",
+              "on-tertiary": "#faf5c0",
+              "inverse-primary": "#40a4f4",
+              "background": "#f5f6f7",
+              "tertiary": "#605d34",
+              "on-secondary-fixed-variant": "#47624b",
+              "surface-container-highest": "#dadddf",
+              "tertiary-fixed": "#fef8c3",
+              "on-primary-fixed": "#000000",
+              "outline-variant": "#abadae",
+              "on-error-container": "#570008"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Be Vietnam Pro"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Be Vietnam Pro', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black text-sky-800 dark:text-sky-300 tracking-tighter">Kids World</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 transition-colors" href="#">Playrooms</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 transition-colors" href="#">Nursery</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 transition-colors" href="#">Learning</a>
+<a class="text-sky-700 dark:text-sky-400 font-bold border-b-2 border-sky-600 pb-1" href="#">Toys</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 transition-colors" href="#">Gifts</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center bg-surface-container-low rounded-full px-4 py-2">
+<span class="material-symbols-outlined text-on-surface-variant text-sm mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48 text-on-surface" placeholder="Search curated toys..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-sky-50 dark:hover:bg-sky-900/30 rounded-full transition-all active:scale-90">
+<span class="material-symbols-outlined text-sky-700">shopping_basket</span>
+</button>
+<button class="p-2 hover:bg-sky-50 dark:hover:bg-sky-900/30 rounded-full transition-all active:scale-90">
+<span class="material-symbols-outlined text-sky-700">favorite</span>
+</button>
+<button class="p-2 hover:bg-sky-50 dark:hover:bg-sky-900/30 rounded-full transition-all active:scale-90">
+<span class="material-symbols-outlined text-sky-700">account_circle</span>
+</button>
+</div>
+<button class="hidden md:block bg-gradient-to-b from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-full font-bold shadow-sm hover:brightness-105 active:scale-95 transition-all">
+                    Sign Up
+                </button>
+</div>
+</div>
+</header>
+<main class="max-w-screen-2xl mx-auto px-8 pt-12 pb-24">
+<!-- Hero Product Section -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24">
+<!-- Left: Asymmetrical Gallery -->
+<div class="lg:col-span-7 grid grid-cols-2 gap-4">
+<div class="col-span-2 overflow-hidden rounded-xl bg-surface-container-low aspect-[4/3] group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Modern wooden minimalist dollhouse set" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC44bfDQpFFd85swleYAuB_JoP8lQsNzI5LRxtYZDXlg9bkE5JzAgPhS0zdT5uXn-Lw6uvYKDLbWGpeP6Fk38KdYvxuG2bxwI4hyDAMgqiesqnY65EFOvhKihEuEXYFQnDH5YEIDjgH0d19Kl84-CMaSs3VeK_KSF1pTwQKAL2NLhWzC4ECFLEa-i8nWuxFZYbSaeKvCD7MZ0o891qvFZzGMxnesG9jwC01clip0N7lLy_9BsIxOMjxImXD6vvPQf4dAzJudbX14A"/>
+</div>
+<div class="overflow-hidden rounded-xl bg-surface-container-low aspect-square group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Detail shot of natural wood grain toys" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6hgaFUuMRrVgNDcneZTJktOHpJcv0W1v4jGavROD1hz6kS-idB7x_UoHqumQ757ibdhi_1LVwbiV2R2_47AMIGNLxnm_OOeT9B4uIgtJJSQTAiFeowYoJOT1_5qrZncJ5bZ_eUoLAkkyr6bEsaPS_SgjIF1EomjCeKf65_vqUCK3CInXrQo5j14Mg0fSkVsctoHPY5L7Z-U5b8aJFMrYbXYCXFUTMZvWy0hVQ0BDflwPiVsFLU5mYgVFhD2Ol6GV4uSasFM_VKQ"/>
+</div>
+<div class="overflow-hidden rounded-xl bg-surface-container-low aspect-square group translate-y-8">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Sustainable child playroom interior aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgyMVvH5iiBTQpdIklPIYLLRI3GHUAYf9ZVu5Skaf6mL9gT2L-TaNduLnLTEKaK4gftTXn8WsrWP4eWe0VzsFNZ5bnCj__kKYqPKGTvLMR0PXN8IYjgwUONg8WErlZa0oGWiiAZ4T9X8dUXsH5DVeILBnIqI4SGHHYjTTSCMySMOxgIROsx411SIYh4GEB2b1c-XaEeKjEQnNsiC4lQ-zjJpv4uRc2iBZjUbiWTAmtsoIT6h84JpdVEhJ3dKGcuXinJvqhUkTRrw"/>
+</div>
+</div>
+<!-- Right: Product Info -->
+<div class="lg:col-span-5 flex flex-col justify-start space-y-8">
+<div>
+<div class="inline-flex items-center px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-xs font-bold mb-4">
+<span class="material-symbols-outlined text-xs mr-1" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+                        PARENT'S CHOICE 2024
+                    </div>
+<h1 class="text-5xl font-black tracking-tighter text-on-surface mb-2 leading-tight">The Heirloom Waldorf Play Kitchen</h1>
+<div class="flex items-center gap-4 text-on-surface-variant font-medium">
+<div class="flex">
+<span class="material-symbols-outlined text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span>(128 Reviews)</span>
+</div>
+</div>
+<div class="flex items-baseline gap-3">
+<span class="text-4xl font-bold text-primary">$349.00</span>
+<span class="text-xl text-on-surface-variant line-through">$420.00</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-start gap-3 p-4 bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-primary mt-0.5">eco</span>
+<div>
+<p class="font-bold text-on-surface">100% Sustainable Solid Birch</p>
+<p class="text-sm text-on-surface-variant">No toxic finishes, just pure natural beeswax coating.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-4 bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-primary mt-0.5">handyman</span>
+<div>
+<p class="font-bold text-on-surface">30-Min Easy Assembly</p>
+<p class="text-sm text-on-surface-variant">Precision-engineered joints for a lifetime of play.</p>
+</div>
+</div>
+</div>
+<div class="pt-4">
+<button class="w-full bg-gradient-to-b from-primary to-primary-container text-on-primary py-5 rounded-xl font-extrabold text-xl shadow-lg hover:brightness-105 active:scale-[0.98] transition-all flex items-center justify-center gap-3">
+                        Buy Now on Amazon
+                        <span class="material-symbols-outlined">open_in_new</span>
+</button>
+<p class="text-center text-xs text-on-surface-variant mt-4 px-8 leading-relaxed">
+                        Prices and availability are accurate as of posting. As an affiliate, we may earn a small commission from qualifying purchases at no cost to you.
+                    </p>
+</div>
+<div class="flex items-center justify-center gap-8 pt-4 border-t border-outline-variant/15">
+<div class="flex flex-col items-center gap-1 opacity-60">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="text-[10px] font-bold tracking-widest uppercase">Free Shipping</span>
+</div>
+<div class="flex flex-col items-center gap-1 opacity-60">
+<span class="material-symbols-outlined">history</span>
+<span class="text-[10px] font-bold tracking-widest uppercase">90-Day Returns</span>
+</div>
+<div class="flex flex-col items-center gap-1 opacity-60">
+<span class="material-symbols-outlined">workspace_premium</span>
+<span class="text-[10px] font-bold tracking-widest uppercase">Lifetime Warranty</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Parents Love This Section - Bento Style -->
+<section class="mb-32">
+<h2 class="text-4xl font-black tracking-tight text-center mb-16">Why parents love this</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="md:col-span-2 p-10 bg-surface-container-lowest rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-4xl text-primary mb-6">psychology</span>
+<h3 class="text-2xl font-bold mb-4">Open-Ended Cognitive Growth</h3>
+<p class="text-on-surface-variant leading-relaxed text-lg">Unlike plastic toys with flashing lights and loud sounds, the Heirloom Kitchen encourages active imagination. It becomes a bakery, a laboratory, or a home, growing with your child's brain development from ages 2 to 7.</p>
+</div>
+<div class="mt-12 flex items-center gap-4">
+<div class="h-12 w-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Reviewer portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlHZBEHR7ewgVp3YP2ZSbC6HJ120d0C9Lh0Cctg2rLE8yQpOu-Rqw8feB2piNEjZCxNUQKG1k0Z8l2wfwwiXlv5TlMFYI14ZUa9Cl11Fd8gyaYSZRRrB-HRjEd05iyzjSDzGvHbs16c97KaDj0qeM22npssRr9p5_9ylEB-iStLaPzIvTNKVyQZ0PyhsIokIl3PUSUCD0vdah_QPJYB9uaFoawiZvqIiwmRPvJ8VcOKhNwoE83vCumMZQcye4N9KYrvsyYlpuepQ"/>
+</div>
+<div>
+<p class="font-bold text-sm">Sarah Jenkins</p>
+<p class="text-xs text-on-surface-variant">Early Childhood Educator &amp; Mom of 3</p>
+</div>
+</div>
+</div>
+<div class="p-10 bg-secondary-container text-on-secondary-container rounded-xl flex flex-col justify-center text-center">
+<span class="material-symbols-outlined text-6xl mb-6 self-center" style="font-variation-settings: 'FILL' 1;">park</span>
+<h3 class="text-2xl font-bold mb-4">Plastic-Free Home</h3>
+<p class="leading-relaxed opacity-90">Designed for parents who value aesthetics and the planet. This kitchen looks like a piece of high-end furniture in your living room.</p>
+</div>
+<div class="p-10 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-4xl text-primary mb-6">safety_check</span>
+<h3 class="text-2xl font-bold mb-4">ASTM Certified</h3>
+<p class="text-on-surface-variant leading-relaxed">Tested beyond industry standards for weight bearing and tip-over safety. Peace of mind built-in.</p>
+</div>
+<div class="md:col-span-2 p-10 bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/10">
+<div class="flex flex-col md:flex-row gap-8 items-center">
+<div class="w-full md:w-1/3 overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover" data-alt="Sustainable materials close up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQDzoeP1XTCoWuCmipOCJKcUbuVY9aXP1ohWQqFOwKeIBkAMznahXwD88gp6ei1_CecQFIE709417qP9C_vOTkOvbk5A_1AM1iJUtSGt9JS1seo4OC8KPTIxzJTV1CiH8KEYtOzpxZ6tPvHQHyMD4IE4hIAludXiNDDyFP63jYaXiNpH_a0O3JH-9bhGKtxP0TRh7VQUC-Ka_rS9aOxhye3HBoZYdIXJRWQkGcxB85z7xnizpwxoKSBKaGj5uwpHXnKqxNHvucPw"/>
+</div>
+<div class="w-full md:w-2/3">
+<h3 class="text-2xl font-bold mb-4">Generational Durability</h3>
+<p class="text-on-surface-variant leading-relaxed">We don't believe in "disposable" toys. This kitchen is constructed with hand-finished birch wood and stainless steel hardware meant to be passed down through generations.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Comparison Table Section -->
+<section class="mb-32 bg-surface-container-low rounded-3xl p-12 lg:p-20 overflow-hidden relative">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+<div class="max-w-4xl mx-auto">
+<h2 class="text-4xl font-black tracking-tight text-center mb-4">Better for your child.</h2>
+<p class="text-center text-on-surface-variant mb-16 max-w-xl mx-auto">How the Heirloom Waldorf Kitchen compares to leading mass-market alternatives.</p>
+<div class="grid grid-cols-3 gap-1">
+<div class="p-6"></div>
+<div class="p-6 bg-primary text-on-primary rounded-t-2xl font-bold text-center">Heirloom Waldorf</div>
+<div class="p-6 bg-surface-container-high rounded-t-2xl font-bold text-center text-on-surface-variant">Competitor X</div>
+<!-- Row 1 -->
+<div class="p-6 font-bold border-b border-outline-variant/20 flex items-center">Material Choice</div>
+<div class="p-6 bg-primary-dim text-on-primary border-b border-primary/20 text-center flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-green-400">check_circle</span>
+                        Solid Birch
+                    </div>
+<div class="p-6 bg-surface-container text-on-surface-variant border-b border-outline-variant/20 text-center flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-red-400">cancel</span>
+                        Plastic/MDF
+                    </div>
+<!-- Row 2 -->
+<div class="p-6 font-bold border-b border-outline-variant/20 flex items-center">Toxin Safety</div>
+<div class="p-6 bg-primary-dim text-on-primary border-b border-primary/20 text-center flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-green-400">check_circle</span>
+                        Non-Toxic Wax
+                    </div>
+<div class="p-6 bg-surface-container text-on-surface-variant border-b border-outline-variant/20 text-center flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-red-400">cancel</span>
+                        Formaldehyde
+                    </div>
+<!-- Row 3 -->
+<div class="p-6 font-bold border-b border-outline-variant/20 flex items-center">Aesthetic</div>
+<div class="p-6 bg-primary-dim text-on-primary border-b border-primary/20 text-center flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-green-400">check_circle</span>
+                        Editorial/Clean
+                    </div>
+<div class="p-6 bg-surface-container text-on-surface-variant border-b border-outline-variant/20 text-center flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-red-400">cancel</span>
+                        Bright Primary
+                    </div>
+<!-- Row 4 -->
+<div class="p-6 font-bold flex items-center">Warranty</div>
+<div class="p-6 bg-primary-dim text-on-primary rounded-b-2xl text-center flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-green-400">check_circle</span>
+                        Lifetime
+                    </div>
+<div class="p-6 bg-surface-container text-on-surface-variant rounded-b-2xl text-center flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-red-400">cancel</span>
+                        90 Days
+                    </div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="bg-primary text-on-primary rounded-3xl p-12 lg:p-20 text-center overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary-container opacity-50"></div>
+<div class="relative z-10 max-w-2xl mx-auto">
+<h2 class="text-4xl lg:text-5xl font-black tracking-tighter mb-6">Invest in their imagination.</h2>
+<p class="text-lg opacity-90 mb-10 leading-relaxed">Don't settle for toys that break in a season. Give them a foundation for creative play that lasts a lifetime.</p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<button class="w-full sm:w-auto px-10 py-5 bg-surface-container-lowest text-primary font-black rounded-xl text-xl shadow-xl hover:scale-105 active:scale-95 transition-all">
+                        Buy Now: $349.00
+                    </button>
+<button class="w-full sm:w-auto px-10 py-5 border-2 border-on-primary/30 hover:border-on-primary/60 text-on-primary font-bold rounded-xl text-lg transition-all">
+                        Read All Reviews
+                    </button>
+</div>
+<p class="mt-8 text-xs opacity-70">Over 5,000 kitchens delivered to happy homes worldwide.</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-100 dark:bg-slate-950 mt-auto">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 w-full px-12 py-16 max-w-screen-2xl mx-auto">
+<div class="col-span-2 md:col-span-1">
+<div class="text-xl font-bold text-slate-800 dark:text-slate-200 mb-4">Kids World</div>
+<p class="text-sm text-slate-500 mb-6 max-w-xs">Helping modern parents build beautiful, functional play spaces since 2018.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-slate-400 hover:text-sky-600 cursor-pointer transition-colors">social_leaderboard</span>
+<span class="material-symbols-outlined text-slate-400 hover:text-sky-600 cursor-pointer transition-colors">photo_camera</span>
+<span class="material-symbols-outlined text-slate-400 hover:text-sky-600 cursor-pointer transition-colors">play_circle</span>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-slate-800 dark:text-slate-200 mb-4">Explore</h4>
+<ul class="space-y-2">
+<li><a class="text-sm text-slate-500 hover:text-sky-500 transition-colors" href="#">About Us</a></li>
+<li><a class="text-sm text-slate-500 hover:text-sky-500 transition-colors" href="#">Sustainability</a></li>
+<li><a class="text-sm text-slate-500 hover:text-sky-500 transition-colors" href="#">Parenting Guides</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-slate-800 dark:text-slate-200 mb-4">Legal</h4>
+<ul class="space-y-2">
+<li><a class="text-sm text-slate-500 hover:text-sky-500 transition-colors" href="#">Affiliate Disclosure</a></li>
+<li><a class="text-sm text-slate-500 hover:text-sky-500 transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-sm text-slate-500 hover:text-sky-500 transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-slate-800 dark:text-slate-200 mb-4">Support</h4>
+<ul class="space-y-2">
+<li><a class="text-sm text-slate-500 hover:text-sky-500 transition-colors" href="#">Contact</a></li>
+<li><a class="text-sm text-slate-500 hover:text-sky-500 transition-colors" href="#">Shipping FAQ</a></li>
+<li><a class="text-sm text-slate-500 hover:text-sky-500 transition-colors" href="#">Returns</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-slate-200 dark:border-slate-800 py-8 px-12 max-w-screen-2xl mx-auto">
+<p class="text-xs text-center text-slate-400">© 2024 Kids World. Curated with love for modern parents.</p>
+</div>
+</footer>
+</body></html>
