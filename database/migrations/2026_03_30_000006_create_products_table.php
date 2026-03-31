@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->string('age_group');
             $table->decimal('price', 10, 2);
             $table->decimal('rating', 3, 2)->default(0);
-            $table->enum('status', ['standard', 'featured', 'trending'])->default('standard');
+            $table->enum('status', ['standard', 'featured'])->default('standard');
             $table->string('image_path', 2048)->nullable();
             $table->boolean('is_active')->default(true);
             $table->timestamps();

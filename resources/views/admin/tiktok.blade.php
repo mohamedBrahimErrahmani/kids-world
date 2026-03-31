@@ -7,14 +7,17 @@
     <div class="flex justify-between items-end mb-10">
         <div>
             <h1 class="font-headline text-4xl font-extrabold tracking-tight text-on-background mb-2">TikTok Tracker</h1>
-            <p class="text-on-surface-variant font-body text-lg">Measure viral impact and affiliate conversion in real-time.</p>
+            <p class="text-on-surface-variant font-body text-lg">Measure viral impact and affiliate conversion in real-time.
+            </p>
         </div>
         <div class="flex gap-4">
-            <button class="flex items-center gap-2 px-6 py-3 bg-surface-container-lowest text-primary font-headline font-bold rounded-xl shadow-sm hover:bg-surface-container-low transition-colors">
+            <button
+                class="flex items-center gap-2 px-6 py-3 bg-surface-container-lowest text-primary font-headline font-bold rounded-xl shadow-sm hover:bg-surface-container-low transition-colors">
                 <span class="material-symbols-outlined">sync</span>
                 Sync TikTok Data
             </button>
-            <button class="flex items-center gap-2 px-6 py-3 bg-gradient-to-b from-primary to-primary-container text-on-primary font-headline font-bold rounded-xl shadow-md hover:brightness-105 transition-all">
+            <button
+                class="flex items-center gap-2 px-6 py-3 bg-gradient-to-b from-primary to-primary-container text-on-primary font-headline font-bold rounded-xl shadow-md hover:brightness-105 transition-all">
                 <span class="material-symbols-outlined">add_circle</span>
                 Add New Video
             </button>
@@ -81,13 +84,27 @@
             <table class="w-full text-left border-collapse">
                 <thead>
                     <tr class="bg-surface-container-low/30 border-b border-surface-variant/20">
-                        <th class="px-8 py-4 font-label text-xs uppercase tracking-widest text-on-surface-variant font-bold">Video Thumbnail</th>
-                        <th class="px-6 py-4 font-label text-xs uppercase tracking-widest text-on-surface-variant font-bold">Linked Product(s)</th>
-                        <th class="px-6 py-4 font-label text-xs uppercase tracking-widest text-on-surface-variant font-bold text-center">Date Posted</th>
-                        <th class="px-6 py-4 font-label text-xs uppercase tracking-widest text-on-surface-variant font-bold text-right">Views</th>
-                        <th class="px-6 py-4 font-label text-xs uppercase tracking-widest text-on-surface-variant font-bold text-right">Clicks</th>
-                        <th class="px-6 py-4 font-label text-xs uppercase tracking-widest text-on-surface-variant font-bold text-right">Engagement</th>
-                        <th class="px-8 py-4 font-label text-xs uppercase tracking-widest text-on-surface-variant font-bold text-center">Action</th>
+                        <th
+                            class="px-8 py-4 font-label text-xs uppercase tracking-widest text-on-surface-variant font-bold">
+                            Video Thumbnail</th>
+                        <th
+                            class="px-6 py-4 font-label text-xs uppercase tracking-widest text-on-surface-variant font-bold">
+                            Linked Product(s)</th>
+                        <th
+                            class="px-6 py-4 font-label text-xs uppercase tracking-widest text-on-surface-variant font-bold text-center">
+                            Date Posted</th>
+                        <th
+                            class="px-6 py-4 font-label text-xs uppercase tracking-widest text-on-surface-variant font-bold text-right">
+                            Views</th>
+                        <th
+                            class="px-6 py-4 font-label text-xs uppercase tracking-widest text-on-surface-variant font-bold text-right">
+                            Clicks</th>
+                        <th
+                            class="px-6 py-4 font-label text-xs uppercase tracking-widest text-on-surface-variant font-bold text-right">
+                            Engagement</th>
+                        <th
+                            class="px-8 py-4 font-label text-xs uppercase tracking-widest text-on-surface-variant font-bold text-center">
+                            Action</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-surface-container">
@@ -135,62 +152,67 @@
                         ];
                     @endphp
                     @foreach($videos as $v)
-                    <tr class="hover:bg-surface-container-low/20 transition-colors group">
-                        <td class="px-8 py-6">
-                            <div class="flex items-center gap-4">
-                                <div class="relative w-16 h-24 rounded-lg overflow-hidden bg-surface-dim shadow-inner group-hover:scale-105 transition-transform">
-                                    <img class="w-full h-full object-cover" src="{{ $v['img'] }}"/>
-                                    <div class="absolute inset-0 flex items-center justify-center bg-black/20">
-                                        <span class="material-symbols-outlined text-white text-xl">play_circle</span>
+                        <tr class="hover:bg-surface-container-low/20 transition-colors group">
+                            <td class="px-8 py-6">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="relative w-16 h-24 rounded-lg overflow-hidden bg-surface-dim shadow-inner group-hover:scale-105 transition-transform">
+                                        <img class="w-full h-full object-cover" src="{{ $v['img'] }}" />
+                                        <div class="absolute inset-0 flex items-center justify-center bg-black/20">
+                                            <span class="material-symbols-outlined text-white text-xl">play_circle</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col max-w-[150px]">
+                                        <span class="text-sm font-bold truncate">{{ $v['title'] }}</span>
+                                        <a class="text-[10px] text-primary flex items-center gap-1 hover:underline" href="#">
+                                            {{ $v['url'] }}
+                                            <span class="material-symbols-outlined text-[10px]">open_in_new</span>
+                                        </a>
                                     </div>
                                 </div>
-                                <div class="flex flex-col max-w-[150px]">
-                                    <span class="text-sm font-bold truncate">{{ $v['title'] }}</span>
-                                    <a class="text-[10px] text-primary flex items-center gap-1 hover:underline" href="#">
-                                        {{ $v['url'] }}
-                                        <span class="material-symbols-outlined text-[10px]">open_in_new</span>
-                                    </a>
+                            </td>
+                            <td class="px-6 py-6">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-8 h-8 rounded-md bg-surface-container overflow-hidden">
+                                        <img class="w-full h-full object-cover" src="{{ $v['product_img'] }}" />
+                                    </div>
+                                    <span class="text-sm font-medium">{{ $v['product'] }}</span>
+                                    @if($v['extra_products'] > 0)
+                                        <span
+                                            class="px-2 py-0.5 bg-tertiary-container text-on-tertiary-container text-[10px] font-bold rounded-full">+{{ $v['extra_products'] }}</span>
+                                    @endif
                                 </div>
-                            </div>
-                        </td>
-                        <td class="px-6 py-6">
-                            <div class="flex items-center gap-2">
-                                <div class="w-8 h-8 rounded-md bg-surface-container overflow-hidden">
-                                    <img class="w-full h-full object-cover" src="{{ $v['product_img'] }}"/>
+                            </td>
+                            <td class="px-6 py-6 text-center">
+                                <span class="text-sm text-on-surface-variant font-body">{{ $v['date'] }}</span>
+                            </td>
+                            <td class="px-6 py-6 text-right font-headline font-bold">{{ $v['views'] }}</td>
+                            <td class="px-6 py-6 text-right font-headline font-bold">{{ $v['clicks'] }}</td>
+                            <td class="px-6 py-6 text-right">
+                                <div class="flex flex-col items-end">
+                                    <span class="text-sm font-bold text-secondary">{{ $v['engagement'] }}</span>
+                                    <div class="w-16 h-1 bg-surface-container rounded-full overflow-hidden mt-1">
+                                        <div class="h-full bg-secondary" style="width: {{ $v['eng_width'] }}"></div>
+                                    </div>
                                 </div>
-                                <span class="text-sm font-medium">{{ $v['product'] }}</span>
-                                @if($v['extra_products'] > 0)
-                                <span class="px-2 py-0.5 bg-tertiary-container text-on-tertiary-container text-[10px] font-bold rounded-full">+{{ $v['extra_products'] }}</span>
-                                @endif
-                            </div>
-                        </td>
-                        <td class="px-6 py-6 text-center">
-                            <span class="text-sm text-on-surface-variant font-body">{{ $v['date'] }}</span>
-                        </td>
-                        <td class="px-6 py-6 text-right font-headline font-bold">{{ $v['views'] }}</td>
-                        <td class="px-6 py-6 text-right font-headline font-bold">{{ $v['clicks'] }}</td>
-                        <td class="px-6 py-6 text-right">
-                            <div class="flex flex-col items-end">
-                                <span class="text-sm font-bold text-secondary">{{ $v['engagement'] }}</span>
-                                <div class="w-16 h-1 bg-surface-container rounded-full overflow-hidden mt-1">
-                                    <div class="h-full bg-secondary" style="width: {{ $v['eng_width'] }}"></div>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="px-8 py-6 text-center">
-                            <button class="p-2 hover:bg-surface-container rounded-lg transition-colors text-outline">
-                                <span class="material-symbols-outlined">more_vert</span>
-                            </button>
-                        </td>
-                    </tr>
+                            </td>
+                            <td class="px-8 py-6 text-center">
+                                <button class="p-2 hover:bg-surface-container rounded-lg transition-colors text-outline">
+                                    <span class="material-symbols-outlined">more_vert</span>
+                                </button>
+                            </td>
+                        </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
-        <div class="px-8 py-4 bg-surface-container-low/30 flex items-center justify-between border-t border-surface-variant/20">
+        <div
+            class="px-8 py-4 bg-surface-container-low/30 flex items-center justify-between border-t border-surface-variant/20">
             <span class="text-xs text-on-surface-variant font-label">Showing 1-3 of 128 videos</span>
             <div class="flex gap-2">
-                <button class="p-2 border border-surface-variant rounded-lg hover:bg-surface-container transition-colors disabled:opacity-50" disabled>
+                <button
+                    class="p-2 border border-surface-variant rounded-lg hover:bg-surface-container transition-colors disabled:opacity-50"
+                    disabled>
                     <span class="material-symbols-outlined text-sm">chevron_left</span>
                 </button>
                 <button class="p-2 border border-surface-variant rounded-lg hover:bg-surface-container transition-colors">
@@ -203,16 +225,20 @@
     <!-- Asymmetric Editorial Section -->
     <div class="mt-12 flex flex-col md:flex-row gap-8">
         <div class="flex-1 bg-gradient-to-br from-primary to-primary-dim p-1 rounded-2xl">
-            <div class="bg-surface-container-lowest h-full rounded-[0.9rem] p-8 flex flex-col md:flex-row items-center gap-8">
+            <div
+                class="bg-surface-container-lowest h-full rounded-[0.9rem] p-8 flex flex-col md:flex-row items-center gap-8">
                 <div class="relative w-full md:w-1/3 aspect-square rounded-xl overflow-hidden shadow-lg rotate-[-2deg]">
-                    <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx_AUbmzNxrkE0E3KOphDCmCRbxtkaZ9fq27eBMc8y-1L_RXxhPY9fyjVgVXBHoWz42-K73prneOXPkP0T54rZAFJ2cMscoRUZINnp-VNvveBt7MkLZqwS7YnbuJufpdu5zDEv8FRZ-pQRSEX2_Wi-tNU_hm5eV661BzxF2VrWe84Wljxlv8P3yb-QVOUAaXtenb_dLUsxAfxAZ5s4M7XDlZClEFOQURVxFUWYidFNlR6WTHBqayZHwxUyKTWbmrQqI3rw4l1HRA"/>
-                    <div class="absolute top-2 right-2 px-3 py-1 bg-tertiary-container text-on-tertiary-container text-[10px] font-bold rounded-full shadow-sm">
-                        TRENDING #1
+                    <img class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx_AUbmzNxrkE0E3KOphDCmCRbxtkaZ9fq27eBMc8y-1L_RXxhPY9fyjVgVXBHoWz42-K73prneOXPkP0T54rZAFJ2cMscoRUZINnp-VNvveBt7MkLZqwS7YnbuJufpdu5zDEv8FRZ-pQRSEX2_Wi-tNU_hm5eV661BzxF2VrWe84Wljxlv8P3yb-QVOUAaXtenb_dLUsxAfxAZ5s4M7XDlZClEFOQURVxFUWYidFNlR6WTHBqayZHwxUyKTWbmrQqI3rw4l1HRA" />
+                    <div
+                        class="absolute top-2 right-2 px-3 py-1 bg-tertiary-container text-on-tertiary-container text-[10px] font-bold rounded-full shadow-sm">
+                        POPULAR #1
                     </div>
                 </div>
                 <div class="flex-1">
                     <h3 class="font-headline font-extrabold text-2xl mb-2 text-primary">Viral: Montessori Blocks</h3>
-                    <p class="font-body text-on-surface-variant mb-6">This product has seen a 240% increase in clicks since the "Viral Playroom Hack" video went live 2 days ago.</p>
+                    <p class="font-body text-on-surface-variant mb-6">This product has seen a 240% increase in clicks since
+                        the "Viral Playroom Hack" video went live 2 days ago.</p>
                     <div class="flex gap-8">
                         <div>
                             <p class="text-[10px] uppercase tracking-widest text-outline mb-1 font-bold">Conversion</p>
@@ -227,9 +253,11 @@
             </div>
         </div>
         <div class="md:w-1/3 flex flex-col gap-4">
-            <div class="bg-tertiary-container/30 p-6 rounded-2xl flex-1 flex flex-col justify-center border border-tertiary/10">
+            <div
+                class="bg-tertiary-container/30 p-6 rounded-2xl flex-1 flex flex-col justify-center border border-tertiary/10">
                 <h4 class="font-headline font-bold text-on-tertiary-container mb-1">Editor's Tip</h4>
-                <p class="text-sm text-on-tertiary-fixed-variant">Videos under 24 seconds featuring ASMR wooden sounds are converting 3x better this month. Try boosting similar content.</p>
+                <p class="text-sm text-on-tertiary-fixed-variant">Videos under 24 seconds featuring ASMR wooden sounds are
+                    converting 3x better this month. Try boosting similar content.</p>
             </div>
             <div class="bg-surface-container p-6 rounded-2xl flex-1 flex items-center gap-4">
                 <div class="p-3 bg-surface-container-lowest rounded-xl">
@@ -237,7 +265,7 @@
                 </div>
                 <div>
                     <p class="font-headline font-bold text-sm">AI Content Gen</p>
-                    <p class="text-xs text-on-surface-variant">Generate viral hooks based on this week's trends.</p>
+                    <p class="text-xs text-on-surface-variant">Generate viral hooks based on this week's top content.</p>
                 </div>
             </div>
         </div>

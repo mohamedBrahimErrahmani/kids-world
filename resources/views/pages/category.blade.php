@@ -6,100 +6,211 @@
     @include('layouts.partials.header')
 
     <main class="pt-24 pb-32 px-4 md:px-8 max-w-7xl mx-auto">
-        <!-- Editorial Header Section -->
-        <section class="mb-12">
-            <div class="bg-surface-container-low rounded-xl p-8 md:p-12 relative overflow-hidden">
-                <div class="relative z-10 max-w-2xl">
-                    <span class="inline-block bg-tertiary-container text-on-tertiary-container text-[11px] font-bold uppercase tracking-[0.15em] px-4 py-1.5 rounded-full mb-6">Curated Selection</span>
-                    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-on-surface mb-4 leading-[1.1]">The Modern Toy Box</h1>
-                    <p class="text-on-surface-variant text-lg leading-relaxed max-w-lg">Thoughtfully curated essentials designed to spark curiosity, movement, and joy. No clutter, just high-quality play.</p>
-                </div>
-                <div class="absolute right-[-5%] bottom-[-10%] md:bottom-[-20%] w-1/2 opacity-20 md:opacity-100 mix-blend-multiply pointer-events-none">
-                    <img alt="Abstract Toy Shapes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCipRO4oav-uTqobintGkoVAyC2W6qt7kpXSRqnL1i2qeofM9LV83wibEO40r3oa_9sZALrKsPZmT7pbULPRUc5CBFvr0boCulTqiqzx1XErp8zDL-9m5n_hazcX6JClneGlI56xEMwsCU05ab12xsvCBhPeHS1M77kAV21CS7ETJgOdc7iQ9sO5D3YE5K_rzdGxO15sJ6aCchEks2ZRuEB50lzU6IP2jSvbFnydZ-XAXgtcG87giRTiiQp_AfFSFzaKnn8Sn_0XA"/>
-                </div>
-            </div>
-        </section>
+        <!-- Breadcrumbs -->
+        <nav class="flex items-center gap-2 mb-8 text-xs font-bold uppercase tracking-widest text-on-surface-variant">
+            <a href="{{ route('home') }}" class="hover:text-primary transition-colors">Home</a>
+            <span class="material-symbols-outlined text-[14px]">chevron_right</span>
+            <span class="text-on-surface">Categories</span>
+        </nav>
 
-        <!-- Filters Section -->
-        <section class="sticky top-[80px] z-40 mb-10 bg-background/90 backdrop-blur-md py-4">
-            <div class="flex flex-col gap-6">
+        <div class="flex flex-col lg:flex-row gap-12">
+            <!-- Sidebar: Filters (Desktop Only) -->
+            <aside class="hidden lg:block w-64 flex-shrink-0 space-y-10 sticky top-32 h-fit">
+                <!-- Category Filter -->
+                <div class="space-y-4">
+                    <h3 class="font-headline font-black text-xs uppercase tracking-[0.2em] text-on-surface-variant">
+                        Categories</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="{{ route('category', array_merge(request()->except('category', 'page'))) }}"
+                                class="flex items-center justify-between group py-1 text-sm {{ !request('category') ? 'text-primary font-bold' : 'text-on-surface-variant hover:text-on-surface' }} transition-colors">
+                                <span>All Products</span>
+                                @if(!request('category')) <span class="w-1.5 h-1.5 rounded-full bg-primary"></span> @endif
+                            </a>
+                        </li>
+                        @foreach($categories as $category)
+                            <li>
+                                <a href="{{ route('category', array_merge(request()->all(), ['category' => $category->slug])) }}"
+                                    class="flex items-center justify-between group py-1 text-sm {{ request('category') == $category->slug ? 'text-primary font-bold' : 'text-on-surface-variant hover:text-on-surface' }} transition-colors">
+                                    <span>{{ $category->name }}</span>
+                                    @if(request('category') == $category->slug) <span
+                                    class="w-1.5 h-1.5 rounded-full bg-primary"></span> @endif
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+
                 <!-- Age Filter -->
-                <div class="flex flex-col gap-3">
-                    <label class="font-headline font-bold text-sm tracking-wide text-on-surface-variant uppercase flex items-center gap-2">
-                        <span class="material-symbols-outlined text-[18px]">child_care</span>
-                        Shop by Age
-                    </label>
-                    <div class="flex gap-3 overflow-x-auto no-scrollbar pb-1">
-                        @foreach(['0-1 Years', '2-3 Years', '4-6 Years', '7+ Years'] as $age)
-                            <button class="flex-shrink-0 px-6 py-2.5 rounded-full {{ $age == '2-3 Years' ? 'bg-primary text-white shadow-md' : 'bg-surface-container-lowest border border-outline-variant/20 text-on-surface hover:bg-primary-container hover:text-white' }} font-semibold transition-all">
-                                {{ $age }}
-                            </button>
+                <div class="space-y-4">
+                    <h3 class="font-headline font-black text-xs uppercase tracking-[0.2em] text-on-surface-variant">Shop by
+                        Age</h3>
+                    <div class="grid grid-cols-1 gap-2">
+                        <a href="{{ route('category', array_merge(request()->except('age_group', 'page'))) }}"
+                            class="px-4 py-2 rounded-lg text-sm font-medium transition-all {{ !request('age_group') ? 'bg-primary text-white shadow-sm' : 'bg-surface-container-low text-on-surface hover:bg-surface-container-high' }}">
+                            All Ages
+                        </a>
+                        @foreach($ageGroups as $age)
+                            <a href="{{ route('category', array_merge(request()->all(), ['age_group' => $age->slug])) }}"
+                                class="px-4 py-2 rounded-lg text-sm font-medium transition-all {{ request('age_group') == $age->slug ? 'bg-primary text-white shadow-sm' : 'bg-surface-container-low text-on-surface hover:bg-surface-container-high' }}">
+                                {{ $age->name }}
+                            </a>
                         @endforeach
                     </div>
                 </div>
-                <!-- Type Filter -->
-                <div class="flex flex-col gap-3">
-                    <label class="font-headline font-bold text-sm tracking-wide text-on-surface-variant uppercase flex items-center gap-2">
-                        <span class="material-symbols-outlined text-[18px]">category</span>
-                        Play Type
-                    </label>
-                    <div class="flex gap-3 overflow-x-auto no-scrollbar pb-1">
-                        @php
-                            $types = [
-                                ['label' => 'Educational', 'icon' => 'school', 'active' => true],
-                                ['label' => 'Fun & Games', 'icon' => 'celebration', 'active' => false],
-                                ['label' => 'Outdoor', 'icon' => 'forest', 'active' => false],
-                            ];
-                        @endphp
-                        @foreach($types as $type)
-                            <button class="flex-shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-xl {{ $type['active'] ? 'bg-secondary-container text-on-secondary-container' : 'bg-surface-container-lowest text-on-surface border border-outline-variant/10' }} font-medium">
-                                <span class="material-symbols-outlined text-[20px]">{{ $type['icon'] }}</span> {{ $type['label'] }}
-                            </button>
+
+                <!-- Play Type Filter -->
+                <div class="space-y-4">
+                    <h3 class="font-headline font-black text-xs uppercase tracking-[0.2em] text-on-surface-variant">Play
+                        Type</h3>
+                    <div class="space-y-2">
+                        @foreach($playTypes as $type)
+                            <a href="{{ route('category', array_merge(request()->all(), ['play_type' => $type->slug])) }}"
+                                class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium transition-all {{ request('play_type') == $type->slug ? 'bg-secondary-container text-on-secondary-container shadow-sm' : 'bg-transparent text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface' }}">
+                                <span class="material-symbols-outlined text-[20px]">{{ $type->icon }}</span>
+                                {{ $type->name }}
+                            </a>
                         @endforeach
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Product Grid -->
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
-            @php
-                $products = [
-                    ['name' => 'Nordic Pine Discovery Blocks', 'price' => '$45.00', 'rating' => '4.9', 'reviews' => '124', 'img' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCzgmVtiI6sGdYH9Qn-jgDZi3qNVpmC17Xc7gbsF7zzdAWnNNnMgP2uhWpdXt8rw1JOsqPCrq-EYrm2sRV2duWBb1KjUOjGz4kEySJyz4WXux333g5tqXIjyrD7VEdNrBCuaMtNncOYSA9hbHYYpVUrAu9K8MHgFiv15qqM_quRjtkwdS8Sg78HgGhU9GgulizGRNdKHbwYNlJQQ7niX_E9XB3gTqTKgNMYyP1lHyosqcXA4DBknbLT47lGtBY3zlFtBQzMHnniIw', 'trending' => true],
-                    ['name' => 'Organic Cotton Sleepy Bear', 'price' => '$32.00', 'rating' => '4.8', 'reviews' => '89', 'img' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuALCoklgGmCVkwheGwtu0nlvRBva33lhMMQWKsqM4TVmFlDr4NJF_FpZLZPLWI6HDoxfOMHYsZg2YUn1-lSWtMwqHVW_y4Se7Eom4Oy47zqJE47ABscY2GnrrKlAIkN3B16NGYQn7QmWx4f_Pcpw9TIabbC1kfePb7DXcJJpTkd1SIFzvMdm7h0zB-ufGiQpWR5_n000Q73l2eqBimoaqg7xOsWjL6eGuF26rEfZTsEq107_vGnt7iR7nL7oB8ONHQrKaicU7YNJQ'],
-                    ['name' => 'Cognitive Stacking Tower', 'price' => '$28.50', 'rating' => '5.0', 'reviews' => '256', 'img' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBFw3BqSabSSoRtwLcJCjDE0YbaExD60_jD-rlXgr9MkxBHAGFSfh-HJMFCohlRK1YsRkGiFX_bNnWuk6Vn13NMe52efvJvb-jsF7lI-7GQ5CQ-47TVqV-RdXHvL_pqv6CenBuXMmOPKyZ4W-YPByb7CjLY4gN2PlYITm7vSlEWAvoQZGWMuaV2eXle1ir6O1A7iYTc6l1pW8uNVnoHU5M5cizb6_N6VqK-eT0IocyiqU8IUWAq2SHoMl9D2VyjggDVDGs4Rrx-Kw', 'trending' => true],
-                    ['name' => 'Mess-Free Canvas Explorer', 'price' => '$54.00', 'rating' => '4.7', 'reviews' => '42', 'img' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDuZFfcrsLMEI-2-n2My92TOQwLppDhA90ujLdgVrhWXxEQZyPlSEhmkVPSuokpybsVibb-TUD-II-Bw0O_Co3yEdUeotBI36ADYkHLzy5Qjs6coXF3BnzahJ-wulG4ODglULvcIN5p2xFasSUdB5kySa6gk6qzUDLE0KDTtyOvQ5S681cd01tt4Gf_LeBGjcJTO_ks3zZF1Cyn248L9Tf3Upf80UX4gmPEEOklcIWIg6I0g72qioAXqqfIAjK7MivE6Kq58MQ8_A'],
-                ];
-            @endphp
-
-            @foreach($products as $product)
-            <div class="group flex flex-col gap-3 {{ ($loop->index >= 4) ? 'md:mt-8' : '' }}">
-                <div class="relative aspect-[4/5] bg-surface-container-low rounded-lg md:rounded-xl overflow-hidden shadow-sm transition-transform duration-500 group-hover:scale-[1.02]">
-                    @if($product['trending'] ?? false)
-                    <div class="absolute top-3 left-3 z-10">
-                        <span class="bg-primary text-white text-[10px] md:text-[11px] font-bold px-3 py-1 rounded-full flex items-center gap-1 shadow-lg">
-                            <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
-                            TRENDING
-                        </span>
-                    </div>
-                    @endif
-                    <img alt="{{ $product['name'] }}" class="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-90" src="{{ $product['img'] }}"/>
-                    <a href="{{ route('product') }}" class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md text-primary font-bold py-3 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center justify-center gap-2">
-                        BUY NOW
-                        <span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+                @if(request()->anyFilled(['category', 'age_group', 'play_type']))
+                    <a href="{{ route('category') }}"
+                        class="inline-flex items-center gap-2 text-xs font-black text-error hover:underline pt-4">
+                        <span class="material-symbols-outlined text-sm">close</span>
+                        CLEAR ALL FILTERS
                     </a>
-                </div>
-                <div class="px-1">
-                    <div class="flex items-center gap-1 mb-1">
-                        <span class="material-symbols-outlined text-yellow-500 text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
-                        <span class="text-[12px] font-bold text-on-surface">{{ $product['rating'] }}</span>
-                        <span class="text-[12px] text-on-surface-variant ml-1">({{ $product['reviews'] }})</span>
+                @endif
+            </aside>
+
+            <!-- Main Content Area -->
+            <div class="flex-1 space-y-12">
+                <!-- Mobile Only: Quick Filter Bar -->
+                <div
+                    class="lg:hidden flex flex-col gap-4 sticky top-20 z-40 bg-surface/95 backdrop-blur-md -mx-4 px-4 py-4 border-b border-surface-container">
+                    <div class="flex gap-2 overflow-x-auto no-scrollbar">
+                        <a href="{{ route('category', array_merge(request()->except('category', 'page'))) }}"
+                            class="flex-shrink-0 px-5 py-2 rounded-full text-xs font-bold uppercase transition-all {{ !request('category') ? 'bg-primary text-white shadow-md' : 'bg-surface-container-low text-on-surface-variant' }}">
+                            All
+                        </a>
+                        @foreach($categories as $category)
+                            <a href="{{ route('category', array_merge(request()->all(), ['category' => $category->slug])) }}"
+                                class="flex-shrink-0 px-5 py-2 rounded-full text-xs font-bold uppercase transition-all {{ request('category') == $category->slug ? 'bg-primary text-white shadow-md' : 'bg-surface-container-low text-on-surface-variant' }}">
+                                {{ $category->name }}
+                            </a>
+                        @endforeach
                     </div>
-                    <h3 class="text-on-surface font-bold text-sm md:text-base leading-tight mb-1 group-hover:text-primary transition-colors">{{ $product['name'] }}</h3>
-                    <p class="text-primary-dim font-black text-lg">{{ $product['price'] }}</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2 overflow-x-auto no-scrollbar max-w-[70%]">
+                            @if(request('age_group'))
+                                <span
+                                    class="flex-shrink-0 px-3 py-1.5 bg-surface-container-highest rounded-lg text-[10px] font-black uppercase flex items-center gap-1">
+                                    {{ request('age_group') }}
+                                    <a href="{{ route('category', request()->except('age_group')) }}"><span
+                                            class="material-symbols-outlined text-xs">close</span></a>
+                                </span>
+                            @endif
+                            @if(request('play_type'))
+                                <span
+                                    class="flex-shrink-0 px-3 py-1.5 bg-surface-container-highest rounded-lg text-[10px] font-black uppercase flex items-center gap-1">
+                                    {{ request('play_type') }}
+                                    <a href="{{ route('category', request()->except('play_type')) }}"><span
+                                            class="material-symbols-outlined text-xs">close</span></a>
+                                </span>
+                            @endif
+                        </div>
+                        <button
+                            class="flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-xl text-xs font-bold uppercase">
+                            <span class="material-symbols-outlined text-sm">tune</span>
+                            Filters
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Active Filters (Desktop) -->
+                <div class="hidden lg:flex flex-wrap items-center gap-3">
+                    <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mr-2">Displaying
+                        {{ count($products) }} Results</p>
+                    @if(request()->anyFilled(['category', 'age_group', 'play_type']))
+                        @foreach(['category', 'age_group', 'play_type'] as $p)
+                            @if(request($p))
+                                <span
+                                    class="px-4 py-1.5 bg-surface-container-high text-on-surface rounded-full text-[11px] font-bold uppercase flex items-center gap-2">
+                                    <span class="opacity-50 font-medium">{{ str_replace('_', ' ', $p) }}:</span> {{ request($p) }}
+                                    <a href="{{ route('category', request()->except($p)) }}" class="hover:text-error transition-colors">
+                                        <span class="material-symbols-outlined text-sm">close</span>
+                                    </a>
+                                </span>
+                            @endif
+                        @endforeach
+                    @endif
+                </div>
+
+                <!-- Product Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
+                    @forelse($products as $product)
+                        <div class="group relative flex flex-col">
+                            <div
+                                class="relative aspect-[4/5] bg-surface-container-low rounded-3xl overflow-hidden mb-6 transition-all duration-700 group-hover:rounded-[2.5rem] group-hover:shadow-2xl group-hover:shadow-primary/10">
+                                <img alt="{{ $product->name }}"
+                                    class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                    src="{{ $product->image_path }}" />
+
+                                <!-- Fast View Overlay -->
+                                <div
+                                    class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center pointer-events-none">
+                                    <div
+                                        class="bg-white/90 backdrop-blur-md px-6 py-3 rounded-2xl text-primary font-black text-xs uppercase tracking-widest transform translate-y-10 group-hover:translate-y-0 transition-transform duration-500 shadow-xl pointer-events-auto">
+                                        <a href="{{ route('product.show', $product->slug) }}">Quick View</a>
+                                    </div>
+                                </div>
+
+                                <!-- Age Badge -->
+                                <div class="absolute top-4 left-4">
+                                    <span
+                                        class="bg-white/80 backdrop-blur-md text-on-surface px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">
+                                        {{ $product->ageGroup->name }}
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <div class="flex items-center justify-between">
+                                    <p class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60">
+                                        {{ $product->category->name }}</p>
+                                    <div class="flex items-center gap-1">
+                                        <span class="material-symbols-outlined text-primary text-[14px]"
+                                            style="font-variation-settings: 'FILL' 1;">star</span>
+                                        <span
+                                            class="text-[12px] font-black text-on-surface">{{ number_format($product->rating, 1) }}</span>
+                                    </div>
+                                </div>
+                                <h3
+                                    class="text-xl font-bold font-headline text-on-surface leading-tight group-hover:text-primary transition-colors">
+                                    <a href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
+                                </h3>
+                                <p class="text-2xl font-black text-sky-800">${{ number_format($product->price, 2) }}</p>
+                            </div>
+                        </div>
+                    @empty
+                        <div
+                            class="col-span-full py-32 text-center bg-surface-container-lowest rounded-[3rem] border-2 border-dashed border-surface-container-high">
+                            <div class="max-w-md mx-auto space-y-6">
+                                <span
+                                    class="material-symbols-outlined text-8xl text-surface-container-high animate-pulse">package_2</span>
+                                <h3 class="text-3xl font-headline font-black text-on-surface">Nothing here yet</h3>
+                                <p class="text-on-surface-variant text-lg">We couldn't find any products matching your specific
+                                    curation. Try clearing some filters to explore more.</p>
+                                <a href="{{ route('category') }}"
+                                    class="inline-flex items-center gap-3 px-10 py-5 bg-primary text-on-primary rounded-2xl font-black shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 transition-all uppercase tracking-widest text-sm">
+                                    <span class="material-symbols-outlined">restart_alt</span>
+                                    Reset Discovery
+                                </a>
+                            </div>
+                        </div>
+                    @endforelse
                 </div>
             </div>
-            @endforeach
         </div>
     </main>
 
@@ -108,7 +219,14 @@
 @endsection
 
 @push('styles')
-<style>
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-</style>
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
 @endpush

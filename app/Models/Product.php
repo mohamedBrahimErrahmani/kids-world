@@ -17,7 +17,7 @@ class Product extends Model
         'slug',
         'sku',
         'category_id',
-        'age_group',
+        'age_group_id',
         'price',
         'rating',
         'status',
@@ -34,6 +34,16 @@ class Product extends Model
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function ageGroup(): BelongsTo
+    {
+        return $this->belongsTo(AgeGroup::class);
+    }
+
+    public function playTypes(): BelongsToMany
+    {
+        return $this->belongsToMany(PlayType::class);
     }
 
     public function tiktokVideos(): BelongsToMany

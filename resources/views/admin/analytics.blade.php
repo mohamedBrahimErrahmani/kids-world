@@ -10,9 +10,14 @@
             <p class="text-on-surface-variant font-body">Real-time performance tracking for Kids World ecosystem.</p>
         </div>
         <div class="flex gap-2 bg-surface-container-low p-1.5 rounded-xl">
-            <button class="px-4 py-1.5 text-xs font-bold rounded-lg bg-surface-container-lowest shadow-sm text-primary">Last 30 Days</button>
-            <button class="px-4 py-1.5 text-xs font-bold rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors">Last Quarter</button>
-            <button class="px-4 py-1.5 text-xs font-bold rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors">Custom Range</button>
+            <button class="px-4 py-1.5 text-xs font-bold rounded-lg bg-surface-container-lowest shadow-sm text-primary">Last
+                30 Days</button>
+            <button
+                class="px-4 py-1.5 text-xs font-bold rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors">Last
+                Quarter</button>
+            <button
+                class="px-4 py-1.5 text-xs font-bold rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors">Custom
+                Range</button>
         </div>
     </div>
 
@@ -28,7 +33,8 @@
                 <div class="flex items-center gap-4">
                     <div class="flex items-center gap-2">
                         <span class="w-3 h-3 rounded-full bg-primary"></span>
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Conversions</span>
+                        <span
+                            class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Conversions</span>
                     </div>
                     <div class="flex items-center gap-2">
                         <span class="w-3 h-3 rounded-full bg-primary-container"></span>
@@ -51,26 +57,33 @@
                     $days = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
                 @endphp
                 @foreach($chartData as $data)
-                <div class="flex-1 bg-surface-container-low rounded-t-lg group relative transition-all" style="height: {{ $data['c'] }}%;">
-                    <div class="absolute inset-0 bg-primary opacity-20 rounded-t-lg group-hover:opacity-40 transition-opacity"></div>
-                    <div class="absolute bottom-0 w-full bg-primary rounded-t-lg" style="height: {{ $data['v'] }}%;"></div>
-                </div>
+                    <div class="flex-1 bg-surface-container-low rounded-t-lg group relative transition-all"
+                        style="height: {{ $data['c'] }}%;">
+                        <div
+                            class="absolute inset-0 bg-primary opacity-20 rounded-t-lg group-hover:opacity-40 transition-opacity">
+                        </div>
+                        <div class="absolute bottom-0 w-full bg-primary rounded-t-lg" style="height: {{ $data['v'] }}%;"></div>
+                    </div>
                 @endforeach
             </div>
             <div class="flex justify-between mt-4 px-2 text-[10px] font-bold text-on-surface-variant font-label">
                 @foreach($days as $day)
-                <span>{{ $day }}</span>
+                    <span>{{ $day }}</span>
                 @endforeach
             </div>
         </div>
 
         <!-- Device Type -->
-        <div class="col-span-12 lg:col-span-4 bg-surface-container-lowest rounded-xl p-6 shadow-sm shadow-blue-900/5 flex flex-col">
+        <div
+            class="col-span-12 lg:col-span-4 bg-surface-container-lowest rounded-xl p-6 shadow-sm shadow-blue-900/5 flex flex-col">
             <h3 class="font-bold text-lg font-headline mb-1">Device Split</h3>
             <p class="text-xs text-on-surface-variant mb-8">User traffic by hardware</p>
             <div class="flex-1 flex flex-col justify-center items-center">
-                <div class="relative w-40 h-40 rounded-full border-[16px] border-primary-container flex items-center justify-center">
-                    <div class="absolute inset-[-16px] w-40 h-40 rounded-full border-[16px] border-primary border-t-transparent border-l-transparent -rotate-45"></div>
+                <div
+                    class="relative w-40 h-40 rounded-full border-[16px] border-primary-container flex items-center justify-center">
+                    <div
+                        class="absolute inset-[-16px] w-40 h-40 rounded-full border-[16px] border-primary border-t-transparent border-l-transparent -rotate-45">
+                    </div>
                     <div class="text-center">
                         <p class="text-2xl font-black font-headline">72%</p>
                         <p class="text-[10px] uppercase font-bold text-on-surface-variant">Mobile</p>
@@ -86,13 +99,13 @@
                     ];
                 @endphp
                 @foreach($devices as $dev)
-                <div class="flex justify-between items-center text-sm">
-                    <div class="flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full {{ $dev['color'] }}"></span>
-                        <span class="font-medium">{{ $dev['name'] }}</span>
+                    <div class="flex justify-between items-center text-sm">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full {{ $dev['color'] }}"></span>
+                            <span class="font-medium">{{ $dev['name'] }}</span>
+                        </div>
+                        <span class="font-bold">{{ $dev['val'] }}</span>
                     </div>
-                    <span class="font-bold">{{ $dev['val'] }}</span>
-                </div>
                 @endforeach
             </div>
         </div>
@@ -109,12 +122,13 @@
                 </button>
             </div>
             <table class="w-full text-left">
-                <thead class="bg-surface-container-low text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">
+                <thead
+                    class="bg-surface-container-low text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">
                     <tr>
                         <th class="px-6 py-4">Product Name</th>
                         <th class="px-6 py-4">Category</th>
                         <th class="px-6 py-4">Unique Clicks</th>
-                        <th class="px-6 py-4">Trend (7d)</th>
+                        <th class="px-6 py-4">Growth (7d)</th>
                         <th class="px-6 py-4">Conv. Rate</th>
                         <th class="px-6 py-4 text-right">Revenue</th>
                     </tr>
@@ -128,30 +142,32 @@
                         ];
                     @endphp
                     @foreach($products as $p)
-                    <tr class="hover:bg-surface-container-low/30 transition-colors">
-                        <td class="px-6 py-4">
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-lg bg-surface-container overflow-hidden">
-                                    <img class="w-full h-full object-cover" src="{{ $p['img'] }}"/>
+                        <tr class="hover:bg-surface-container-low/30 transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg bg-surface-container overflow-hidden">
+                                        <img class="w-full h-full object-cover" src="{{ $p['img'] }}" />
+                                    </div>
+                                    <span class="text-sm font-semibold">{{ $p['name'] }}</span>
                                 </div>
-                                <span class="text-sm font-semibold">{{ $p['name'] }}</span>
-                            </div>
-                        </td>
-                        <td class="px-6 py-4 text-sm font-medium text-on-surface-variant">{{ $p['cat'] }}</td>
-                        <td class="px-6 py-4 text-sm font-bold">{{ $p['clicks'] }}</td>
-                        <td class="px-6 py-4">
-                            <div class="flex items-center gap-1 {{ str_contains($p['trend'], '+') ? 'text-green-600' : 'text-error' }} font-bold text-xs">
-                                <span class="material-symbols-outlined text-sm">{{ str_contains($p['trend'], '+') ? 'trending_up' : 'trending_down' }}</span>
-                                {{ $p['trend'] }}
-                            </div>
-                        </td>
-                        <td class="px-6 py-4">
-                            <div class="w-24 h-2 bg-surface-container rounded-full overflow-hidden">
-                                <div class="h-full bg-primary rounded-full" style="width: {{ $p['conv'] }}"></div>
-                            </div>
-                        </td>
-                        <td class="px-6 py-4 text-right font-black text-sm">{{ $p['rev'] }}</td>
-                    </tr>
+                            </td>
+                            <td class="px-6 py-4 text-sm font-medium text-on-surface-variant">{{ $p['cat'] }}</td>
+                            <td class="px-6 py-4 text-sm font-bold">{{ $p['clicks'] }}</td>
+                            <td class="px-6 py-4">
+                                <div
+                                    class="flex items-center gap-1 {{ str_contains($p['trend'], '+') ? 'text-green-600' : 'text-error' }} font-bold text-xs">
+                                    <span
+                                        class="material-symbols-outlined text-sm">{{ str_contains($p['trend'], '+') ? 'trending_up' : 'trending_down' }}</span>
+                                    {{ $p['trend'] }}
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="w-24 h-2 bg-surface-container rounded-full overflow-hidden">
+                                    <div class="h-full bg-primary rounded-full" style="width: {{ $p['conv'] }}"></div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 text-right font-black text-sm">{{ $p['rev'] }}</td>
+                        </tr>
                     @endforeach
                 </tbody>
             </table>
@@ -185,7 +201,8 @@
             </div>
             <div class="mt-12 p-4 bg-tertiary-container rounded-xl flex items-center gap-4">
                 <span class="material-symbols-outlined text-on-tertiary-container">lightbulb</span>
-                <p class="text-xs font-medium text-on-tertiary-container">Insight: Users who visit the "TikTok Trends" blog are 4x more likely to complete a purchase within 24 hours.</p>
+                <p class="text-xs font-medium text-on-tertiary-container">Insight: Users who visit the "TikTok Performance"
+                    blog are 4x more likely to complete a purchase within 24 hours.</p>
             </div>
         </div>
 
@@ -198,26 +215,31 @@
                         ['path' => '/gift-guides/stem-toys-2024', 'cat' => 'Gift Guides', 'visits' => '45.2k', 'trend' => '+12%'],
                         ['path' => '/categories/nursery-decor', 'cat' => 'Categories', 'visits' => '38.1k', 'trend' => '0%'],
                         ['path' => '/deals/weekly-favorites', 'cat' => 'Landing Pages', 'visits' => '31.9k', 'trend' => '+5%'],
-                        ['path' => '/tiktok-tracker/trending-now', 'cat' => 'TikTok Tracker', 'visits' => '28.4k', 'trend' => '-3%'],
+                        ['path' => '/tiktok-tracker/performance-hub', 'cat' => 'TikTok Tracker', 'visits' => '28.4k', 'trend' => '-3%'],
                     ];
                 @endphp
                 @foreach($pages as $idx => $page)
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-3">
-                        <span class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center text-[10px] font-bold">{{ $idx + 1 }}</span>
-                        <div>
-                            <p class="text-sm font-bold">{{ $page['path'] }}</p>
-                            <p class="text-[10px] text-on-surface-variant">{{ $page['cat'] }}</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center text-[10px] font-bold">{{ $idx + 1 }}</span>
+                            <div>
+                                <p class="text-sm font-bold">{{ $page['path'] }}</p>
+                                <p class="text-[10px] text-on-surface-variant">{{ $page['cat'] }}</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-sm font-black">{{ $page['visits'] }}</p>
+                            <p
+                                class="text-[10px] {{ str_contains($page['trend'], '+') ? 'text-green-600' : (str_contains($page['trend'], '-') ? 'text-error' : 'text-on-surface-variant') }} font-bold">
+                                {{ $page['trend'] }}</p>
                         </div>
                     </div>
-                    <div class="text-right">
-                        <p class="text-sm font-black">{{ $page['visits'] }}</p>
-                        <p class="text-[10px] {{ str_contains($page['trend'], '+') ? 'text-green-600' : (str_contains($page['trend'], '-') ? 'text-error' : 'text-on-surface-variant') }} font-bold">{{ $page['trend'] }}</p>
-                    </div>
-                </div>
                 @endforeach
             </div>
-            <button class="w-full mt-6 py-2 border border-surface-container rounded-xl text-xs font-bold text-on-surface-variant hover:bg-surface-container-low transition-colors">View All Pages</button>
+            <button
+                class="w-full mt-6 py-2 border border-surface-container rounded-xl text-xs font-bold text-on-surface-variant hover:bg-surface-container-low transition-colors">View
+                All Pages</button>
         </div>
     </div>
 @endsection

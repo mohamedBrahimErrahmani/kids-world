@@ -30,7 +30,22 @@ class BlogPostSeeder extends Seeder
                 'image_path' => 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop',
             ],
             [
-                'title' => 'Web Development Trends',
+                'title' => 'Web Development 33',
+                'content' => 'Latest trends in web development in 2026.',
+                'image_path' => 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop',
+            ],
+            [
+                'title' => 'Web Development 22',
+                'content' => 'Latest trends in web development in 2026.',
+                'image_path' => 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop',
+            ],
+            [
+                'title' => 'Web Development 44',
+                'content' => 'Latest trends in web development in 2026.',
+                'image_path' => 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop',
+            ],
+            [
+                'title' => 'Web Development 55',
                 'content' => 'Latest trends in web development in 2026.',
                 'image_path' => 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop',
             ],

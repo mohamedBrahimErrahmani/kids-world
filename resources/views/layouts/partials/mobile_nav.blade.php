@@ -11,11 +11,6 @@
         <span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
         <span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold uppercase tracking-wider mt-1">Categories</span>
     </a>
-    <a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"
-        href="{{ route('home') }}#trending">
-        <span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
-        <span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold uppercase tracking-wider mt-1">Trending</span>
-    </a>
     <a class="flex flex-col items-center justify-center {{ request()->routeIs('blog.index') ? 'bg-sky-100 dark:bg-sky-900/40 text-sky-800 dark:text-sky-200 rounded-[2rem]' : 'text-slate-400 dark:text-slate-500' }} px-5 py-2 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"
         href="{{ route('blog.index') }}">
         <span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>

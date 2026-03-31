@@ -2,18 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ProductController;
+
 // Public Routes
-Route::get('/', function () {
-    return view('pages.home');
-})->name('home');
-
-Route::get('/category', function () {
-    return view('pages.category');
-})->name('category');
-
-Route::get('/product', function () {
-    return view('pages.product');
-})->name('product');
+Route::get('/', [ProductController::class, 'home'])->name('home');
+Route::get('/category', [ProductController::class, 'index'])->name('category');
+Route::get('/product/{slug}', [ProductController::class, 'show'])->name('product.show');
+Route::get('/product', function () { // Fallback for old route
+    return redirect()->route('category');
+});
 
 Route::resource('blog', \App\Http\Controllers\BlogPostController::class);
 

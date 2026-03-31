@@ -11,8 +11,6 @@
                 href="{{ route('home') }}">Home</a>
             <a class="{{ request()->routeIs('category') ? 'text-sky-700 dark:text-sky-400 font-bold border-b-2 border-sky-600' : 'text-slate-500 dark:text-slate-400 font-medium hover:text-sky-600 dark:hover:text-sky-300' }} transition-colors font-headline"
                 href="{{ route('category') }}">Categories</a>
-            <a class="{{ request()->is('#trending') ? 'text-sky-700 dark:text-sky-400 font-bold border-b-2 border-sky-600' : 'text-slate-500 dark:text-slate-400 font-medium hover:text-sky-600 dark:hover:text-sky-300' }} transition-colors font-headline"
-                href="{{ route('home') }}#trending">Trending</a>
             <a class="{{ request()->is('blog*') ? 'text-sky-700 dark:text-sky-400 font-bold border-b-2 border-sky-600' : 'text-slate-500 dark:text-slate-400 font-medium hover:text-sky-600 dark:hover:text-sky-300' }} transition-colors font-headline"
                 href="{{ route('blog.index') }}">Guides</a>
         </nav>

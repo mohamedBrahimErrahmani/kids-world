@@ -15,13 +15,23 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call([
-            RoleSeeder::class,
-            CategorySeeder::class,
-            UserSeeder::class,
-            ProductSeeder::class,
-            AnalyticsSeeder::class,
-            BlogPostSeeder::class,
-        ]);
+        try {
+            $this->call([
+                RoleSeeder::class,
+                CategorySeeder::class,
+                AgeGroupSeeder::class,
+                PlayTypeSeeder::class,
+                UserSeeder::class,
+                ProductSeeder::class,
+                AnalyticsSeeder::class,
+                BlogPostSeeder::class,
+            ]);
+        } catch (\Exception $e) {
+            \Log::error("Seeding failed: " . $e->getMessage());
+            if (isset($e->errorInfo)) {
+                \Log::error("Error Info: " . json_encode($e->errorInfo));
+            }
+            throw $e;
+        }
     }
 }
