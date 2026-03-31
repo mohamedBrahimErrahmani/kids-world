@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductController;
 Route::get('/', [ProductController::class, 'home'])->name('home');
 Route::get('/category', [ProductController::class, 'index'])->name('category');
 Route::get('/product/{slug}', [ProductController::class, 'show'])->name('product.show');
+Route::get('/product/{slug}/click', [ProductController::class, 'click'])->name('product.click');
 Route::get('/product', function () { // Fallback for old route
     return redirect()->route('category');
 });
@@ -33,29 +34,19 @@ Route::get('/blog-desktop', function () {
 
 // Admin Routes
 Route::prefix('admin')->name('admin.')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [\App\Http\Controllers\AdminController::class, 'dashboard'])->name('dashboard');
 
-    Route::get('/users', function () {
-        return view('admin.users');
-    })->name('users');
+    Route::get('/users', [\App\Http\Controllers\AdminController::class, 'users'])->name('users');
 
-    Route::get('/products', function () {
-        return view('admin.products');
-    })->name('products');
+    Route::get('/products', [\App\Http\Controllers\AdminController::class, 'products'])->name('products');
 
     Route::get('/roles', function () {
         return view('admin.roles');
     })->name('roles');
 
-    Route::get('/analytics', function () {
-        return view('admin.analytics');
-    })->name('analytics');
+    Route::get('/analytics', [\App\Http\Controllers\AdminController::class, 'analytics'])->name('analytics');
 
-    Route::get('/tiktok', function () {
-        return view('admin.tiktok');
-    })->name('tiktok');
+    Route::get('/tiktok', [\App\Http\Controllers\AdminController::class, 'tiktok'])->name('tiktok');
 
     Route::get('/logs', function () {
         return view('admin.logs');

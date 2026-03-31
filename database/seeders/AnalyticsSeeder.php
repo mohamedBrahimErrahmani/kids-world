@@ -11,6 +11,9 @@ class AnalyticsSeeder extends Seeder
 {
     public function run(): void
     {
+        TrafficLog::truncate();
+        ProductAnalytics::truncate();
+
         // Mock Traffic
         for ($i = 0; $i < 50; $i++) {
             TrafficLog::create([

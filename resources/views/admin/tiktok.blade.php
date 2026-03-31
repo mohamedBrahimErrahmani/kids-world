@@ -34,7 +34,7 @@
                 <span class="text-secondary text-xs font-bold">+12.5%</span>
             </div>
             <p class="text-on-surface-variant font-label text-xs uppercase tracking-wider mb-1">Total Video Views</p>
-            <p class="text-2xl font-headline font-extrabold">2.4M</p>
+            <p class="text-2xl font-headline font-extrabold">{{ $totalViews }}</p>
         </div>
         <div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border-l-4 border-secondary">
             <div class="flex items-center justify-between mb-4">
@@ -44,7 +44,7 @@
                 <span class="text-secondary text-xs font-bold">+5.2%</span>
             </div>
             <p class="text-on-surface-variant font-label text-xs uppercase tracking-wider mb-1">Total Clicks</p>
-            <p class="text-2xl font-headline font-extrabold">84.2K</p>
+            <p class="text-2xl font-headline font-extrabold">{{ $totalClicks }}</p>
         </div>
         <div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm">
             <div class="flex items-center justify-between mb-4">
@@ -54,16 +54,16 @@
                 <span class="text-error text-xs font-bold">-1.2%</span>
             </div>
             <p class="text-on-surface-variant font-label text-xs uppercase tracking-wider mb-1">Engagement Avg</p>
-            <p class="text-2xl font-headline font-extrabold">6.8%</p>
+            <p class="text-2xl font-headline font-extrabold">{{ $avgEngagement }}</p>
         </div>
         <div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm">
             <div class="flex items-center justify-between mb-4">
                 <span class="p-2 bg-surface-container-highest rounded-lg text-on-surface">
-                    <span class="material-symbols-outlined">trending_up</span>
+                    <span class="material-symbols-outlined">analytics</span>
                 </span>
             </div>
             <p class="text-on-surface-variant font-label text-xs uppercase tracking-wider mb-1">Top Performer</p>
-            <p class="text-sm font-headline font-bold line-clamp-1">Montessori Wood Blocks...</p>
+            <p class="text-sm font-headline font-bold line-clamp-1">{{ $topPerformerName }}</p>
         </div>
     </div>
 
@@ -151,7 +151,7 @@
                             ]
                         ];
                     @endphp
-                    @foreach($videos as $v)
+                    @forelse($videos as $v)
                         <tr class="hover:bg-surface-container-low/20 transition-colors group">
                             <td class="px-8 py-6">
                                 <div class="flex items-center gap-4">
@@ -173,9 +173,11 @@
                             </td>
                             <td class="px-6 py-6">
                                 <div class="flex items-center gap-2">
-                                    <div class="w-8 h-8 rounded-md bg-surface-container overflow-hidden">
-                                        <img class="w-full h-full object-cover" src="{{ $v['product_img'] }}" />
-                                    </div>
+                                    @if($v['product_img'])
+                                        <div class="w-8 h-8 rounded-md bg-surface-container overflow-hidden">
+                                            <img class="w-full h-full object-cover" src="{{ $v['product_img'] }}" />
+                                        </div>
+                                    @endif
                                     <span class="text-sm font-medium">{{ $v['product'] }}</span>
                                     @if($v['extra_products'] > 0)
                                         <span
@@ -202,7 +204,12 @@
                                 </button>
                             </td>
                         </tr>
-                    @endforeach
+                    @empty
+                        <tr>
+                            <td colspan="7" class="px-8 py-10 text-center text-on-surface-variant italic">No referral videos
+                                found.</td>
+                        </tr>
+                    @endforelse
                 </tbody>
             </table>
         </div>

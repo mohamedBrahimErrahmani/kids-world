@@ -36,6 +36,7 @@ class ProductSeeder extends Seeder
                     'rating' => 4.9,
                     'status' => 'featured',
                     'is_active' => true,
+                    'external_url' => 'https://www.amazon.com/dp/B07N8P2X4G',
                     'play_types' => [$educational->id, $fun->id]
                 ],
                 [
@@ -48,6 +49,7 @@ class ProductSeeder extends Seeder
                     'rating' => 4.8,
                     'status' => 'featured',
                     'is_active' => true,
+                    'external_url' => 'https://www.potterybarnkids.com/products/organic-cotton-sleepy-bear/',
                     'play_types' => [$educational->id]
                 ],
                 [
@@ -60,6 +62,7 @@ class ProductSeeder extends Seeder
                     'rating' => 4.5,
                     'status' => 'featured',
                     'is_active' => true,
+                    'external_url' => 'https://www.creativityforkids.com/products/eco-friendly-wooden-arch',
                     'play_types' => [$educational->id, $fun->id]
                 ],
                 [
@@ -72,6 +75,7 @@ class ProductSeeder extends Seeder
                     'rating' => 5.0,
                     'status' => 'featured',
                     'is_active' => true,
+                    'external_url' => 'https://www.lovevery.com/products/the-stacking-tower',
                     'play_types' => [$educational->id]
                 ],
             ];

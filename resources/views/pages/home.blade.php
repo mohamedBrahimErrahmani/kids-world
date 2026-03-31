@@ -104,7 +104,7 @@
                     </div>
                     <a href="{{ route('category') }}"
                         class="text-primary font-bold flex items-center gap-2 hover:underline">
-                        View All Products <span class="material-symbols-outlined">trending_flat</span>
+                        View All Products <span class="material-symbols-outlined">arrow_forward</span>
                     </a>
                 </div>
                 <div class="space-y-6">
@@ -113,7 +113,8 @@
                             class="bg-surface-container-lowest p-4 rounded-xl flex flex-col md:flex-row items-center gap-6 group hover:shadow-xl transition-shadow border border-white/10">
                             <div
                                 class="w-16 h-16 flex items-center justify-center {{ $index == 0 ? 'bg-primary text-on-primary' : 'bg-surface-container-high text-on-surface' }} rounded-full font-headline font-black text-2xl flex-shrink-0">
-                                {{ $index + 1 }}</div>
+                                {{ $index + 1 }}
+                            </div>
                             <div class="w-24 h-24 rounded-lg bg-slate-100 overflow-hidden flex-shrink-0">
                                 <img alt="{{ $product->name }}" class="w-full h-full object-cover"
                                     src="{{ $product->image_path }}" />

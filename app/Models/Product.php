@@ -22,6 +22,7 @@ class Product extends Model
         'rating',
         'status',
         'image_path',
+        'external_url',
         'is_active',
     ];
 

@@ -64,20 +64,18 @@
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-surface-container">
-                    @php
-                        $products = [
-                            ['name' => 'Nordic Wooden Stacker', 'sku' => 'TOY-7729', 'cat' => 'Educational', 'age' => '2-4 Years', 'price' => '$34.99', 'rating' => 4.8, 'status' => 'Featured', 'active' => true, 'img' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuDcoQAOARAssDJ2V4DFJ1NUVwCQE5o9SibI5sKJSQMqSwBCXM05KXmtNznHhlZVYrXFBDNCHKtwtJkg371YHkKZ9uT5VSFPRlLhjy1cTQwU_QB3DYxUcOkrmTW8YS7_DzHX4jXnMZwuwtsjnSpFSP7KYzNw11YpewGccdOy9jYt8x04Dx9xZ-ftpXSiPHsQECyTIJbpWorC0NP9lRpoaFjdRSUk1hmiQilVtKzZ0B4duaTkam1daK3C2SPBnbGjD-UV5rWGj2qSaA'],
-                            ['name' => 'Cotton Cloud Mobile', 'sku' => 'DEC-1102', 'cat' => 'Nursery', 'age' => 'Newborn', 'price' => '$59.00', 'rating' => 4.9, 'status' => 'Featured', 'active' => false, 'img' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBsmDe3UlgynOk-62U-OUWdfaHMCom9kug9nG1tNkzU6Sd7es63BnNc_wDAi7JibtCrnguPUJlT52SKRZ9PYIBJ4BNvNXngTN0mqMIj1bZQNisOPovafdslres_6VSTTDMGI8UCL49ILYDT8HDJp-TqVOuB4MfWX4aETzEgNeIFdQxiEEwGotgoXc4tcVDUxeEpLrzVtPGvnFEShQIyJ3wp4xuonPc6ler52EHsBUbpp4IS4xCdb1wB0IrxODCsHsWGXl560PY7AA'],
-                            ['name' => 'Organic Hemp Tee', 'sku' => 'APP-4491', 'cat' => 'Apparel', 'age' => '4-6 Years', 'price' => '$22.50', 'rating' => 4.5, 'status' => null, 'active' => false, 'img' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCdDfPVrjrft7BX5SVMZlKuWpix6ix3gmxSuYunTs66pVRYm7igxCDnzDOnwXwnu9vM83IugBLJp0b6zRNLVb3EXxge4HJ4x8kc6mkY4tnahYv0puY1PtNRZ6ksEK5d_Y-TM5k48yl7xVCf6Znj6cQguRRHqq5tBeC2opLkCuO-pS8KCj-YYHuvwLU6bm-9_WFmQQezJlE33lGquDi-pRqOze02-NHtys4NKDiYNf_b18XOcC2Ixl0pH5RtUepwhXTv9ePkykSXAg'],
-                            ['name' => 'Math Bead Maze', 'sku' => 'TOY-8831', 'cat' => 'Educational', 'age' => '3-5 Years', 'price' => '$42.00', 'rating' => 4.7, 'status' => 'Featured', 'active' => true, 'img' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBUhMj4Khkq78FNiif2pNSTUVfu6XzzRdF1tj9Jp8YhktJZ5VCNmyEeOJrE5YENo73ftQIlbI8bgD1W8pFNMiQzZz8ISad3qvxy9hEs9kAHM4nMKWq388V_lYe_PJuc37Icta54DxZsCeoYyKnoeuIxQRtsNVH35u0m3vR9wyuZ5cHRTcbNetaP12DO8oe5fgoTUtes1cgLRbiKrkBizJ3iqojmAis50Wh--TT6OXS-vni4Y_kZAtdzCQiU-1JJoAtUKTjOpwFHoA'],
-                        ];
-                    @endphp
-                    @foreach($products as $p)
+                    @forelse($products as $p)
                         <tr class="hover:bg-surface-bright transition-colors group">
                             <td class="px-8 py-4">
                                 <div class="flex items-center gap-4">
                                     <div class="w-14 h-14 rounded-lg overflow-hidden bg-surface-container-high flex-shrink-0">
-                                        <img class="w-full h-full object-cover" src="{{ $p['img'] }}" />
+                                        @if($p['img'])
+                                            <img class="w-full h-full object-cover" src="{{ $p['img'] }}" />
+                                        @else
+                                            <div class="w-full h-full flex items-center justify-center bg-primary/10 text-primary">
+                                                <span class="material-symbols-outlined text-xs">image</span>
+                                            </div>
+                                        @endif
                                     </div>
                                     <div>
                                         <p class="font-semibold text-on-surface leading-tight">{{ $p['name'] }}</p>
@@ -124,14 +122,19 @@
                                 </div>
                             </td>
                         </tr>
-                    @endforeach
+                    @empty
+                        <tr>
+                            <td colspan="7" class="px-8 py-10 text-center text-on-surface-variant italic">No products found in
+                                database.</td>
+                        </tr>
+                    @endforelse
                 </tbody>
             </table>
             <!-- Pagination -->
             <div
                 class="flex items-center justify-between px-8 py-5 bg-surface-container-low border-t border-surface-container">
-                <p class="text-sm text-on-surface-variant">Showing <span class="font-bold">1-10</span> of <span
-                        class="font-bold">284</span> products</p>
+                <p class="text-sm text-on-surface-variant">Showing <span class="font-bold">1-{{ count($products) }}</span>
+                    of <span class="font-bold">{{ count($products) }}</span> products</p>
                 <div class="flex gap-2">
                     <button
                         class="w-10 h-10 flex items-center justify-center rounded-xl bg-surface-container text-on-surface-variant disabled:opacity-30"
@@ -154,24 +157,35 @@
 
         <!-- Dashboard Insight Bento Grid -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            @php
-                $insights = [
-                    ['label' => 'Monthly Views', 'val' => '12.8k', 'icon' => 'trending_up', 'color' => 'bg-primary-container text-on-primary-container', 'bg' => 'bg-primary-container/10', 't_color' => 'text-primary-dim'],
-                    ['label' => 'Conversions', 'val' => '4.2%', 'icon' => 'shopping_cart', 'color' => 'bg-secondary-container text-on-secondary-container', 'bg' => 'bg-secondary-container/20', 't_color' => 'text-secondary-dim'],
-                    ['label' => 'Featured Assets', 'val' => '42', 'icon' => 'verified', 'color' => 'bg-tertiary-container text-on-tertiary-container', 'bg' => 'bg-tertiary-container/30', 't_color' => 'text-tertiary-dim'],
-                ];
-            @endphp
-            @foreach($insights as $in)
-                <div class="{{ $in['bg'] }} p-6 rounded-lg flex items-center gap-5">
-                    <div class="w-12 h-12 rounded-full {{ $in['color'] }} flex items-center justify-center shadow-lg">
-                        <span class="material-symbols-outlined">{{ $in['icon'] }}</span>
-                    </div>
-                    <div>
-                        <p class="text-xs font-bold uppercase tracking-widest {{ $in['t_color'] }}">{{ $in['label'] }}</p>
-                        <p class="text-2xl font-extrabold text-on-primary-container leading-none mt-1">{{ $in['val'] }}</p>
-                    </div>
+            <div class="{{ 'bg-primary-container/10' }} p-6 rounded-lg flex items-center gap-5">
+                <div
+                    class="w-12 h-12 rounded-full {{ 'bg-primary-container text-on-primary-container' }} flex items-center justify-center shadow-lg">
+                    <span class="material-symbols-outlined">visibility</span>
                 </div>
-            @endforeach
-        </div>
+                <div>
+                    <p class="text-xs font-bold uppercase tracking-widest {{ 'text-primary-dim' }}">Monthly Views</p>
+                    <p class="text-2xl font-extrabold text-on-primary-container leading-none mt-1">{{ $totalViews }}</p>
+                </div>
+            </div>
+            <div class="{{ 'bg-secondary-container/20' }} p-6 rounded-lg flex items-center gap-5">
+                <div
+                    class="w-12 h-12 rounded-full {{ 'bg-secondary-container text-on-secondary-container' }} flex items-center justify-center shadow-lg">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                </div>
+                <div>
+                    <p class="text-xs font-bold uppercase tracking-widest {{ 'text-secondary-dim' }}">Conversions</p>
+                    <p class="text-2xl font-extrabold text-on-primary-container leading-none mt-1">{{ $convRate }}</p>
+                </div>
+            </div>
+            <div class="{{ 'bg-tertiary-container/30' }} p-6 rounded-lg flex items-center gap-5">
+                <div
+                    class="w-12 h-12 rounded-full {{ 'bg-tertiary-container text-on-tertiary-container' }} flex items-center justify-center shadow-lg">
+                    <span class="material-symbols-outlined">verified</span>
+                </div>
+                <div>
+                    <p class="text-xs font-bold uppercase tracking-widest {{ 'text-tertiary-dim' }}">Featured Assets</p>
+                    <p class="text-2xl font-extrabold text-on-primary-container leading-none mt-1">{{ $featuredCount }}</p>
+                </div>
+            </div>
     </section>
 @endsection

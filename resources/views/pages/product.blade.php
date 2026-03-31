@@ -78,69 +78,15 @@
                         {{ $product->description }}
                     </p>
                 </div>
-                <!-- Highlight Box -->
-                <div class="relative overflow-hidden bg-primary text-on-primary p-8 rounded-xl shadow-xl">
-                    <div class="absolute -top-6 -right-6 w-24 h-24 bg-primary-container/20 rounded-full blur-2xl"></div>
-                    <h4 class="text-xl font-bold font-headline mb-3 flex items-center gap-2">
-                        <span class="material-symbols-outlined">favorite</span>
-                        Why parents love this
-                    </h4>
-                    <p class="leading-relaxed font-medium text-on-primary/90 italic">
-                        "The quality is unmatched. It feels like a piece of designer furniture that our toddler actually
-                        uses for hours every single day. Easy to assemble and even easier on the eyes."
-                    </p>
-                    <div class="mt-4 flex items-center gap-3">
-                        <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-xs font-bold">SM
-                        </div>
-                        <p class="text-sm font-semibold">— Sarah M., Verified Parent</p>
-                    </div>
-                </div>
                 <div class="hidden md:block">
-                    <button
-                        class="w-full bg-gradient-to-b from-primary to-primary-container text-on-primary py-5 rounded-xl font-bold text-lg hover:shadow-lg transition-all active:scale-95">
-                        Add to Registry
-                    </button>
+                    <a href="{{ route('product.click', $product->slug) }}" target="_blank"
+                        class="inline-block w-full text-center bg-gradient-to-b from-primary to-primary-container text-on-primary py-5 rounded-xl font-bold text-lg hover:shadow-lg transition-all active:scale-95">
+                        View on Partner Site
+                    </a>
                 </div>
             </div>
         </div>
 
-        <!-- Comparison Table Section -->
-        <section class="mt-24">
-            <h3 class="text-3xl font-black font-headline mb-10 text-center">Compare the Best</h3>
-            <div class="overflow-x-auto bg-white rounded-lg p-1">
-                <table class="w-full text-left border-collapse">
-                    <thead>
-                        <tr class="bg-surface-container-low">
-                            <th class="p-6 font-bold text-sm uppercase tracking-widest text-on-surface-variant">Feature</th>
-                            <th class="p-6 font-bold text-primary font-headline">Montessori Arch</th>
-                            <th class="p-6 font-bold text-on-surface-variant font-headline">Plastic Climber</th>
-                            <th class="p-6 font-bold text-on-surface-variant font-headline">Foam Pit</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-surface-container">
-                        @php
-                            $features = [
-                                ['label' => 'Material', 'v1' => 'Sustainable Wood', 'v2' => 'Recycled HDPE', 'v3' => 'CertiPUR-US Foam'],
-                                ['label' => 'Max Weight', 'v1' => '120 lbs', 'v2' => '50 lbs', 'v3' => 'No limit'],
-                                ['label' => 'Longevity', 'v1' => '10+ Years', 'v2' => '2-3 Years', 'v3' => '5 Years'],
-                                ['label' => 'Aesthetic', 'v1' => 'High-End Editorial', 'v2' => 'Bright/Playful', 'v3' => 'Soft/Neutral', 'v1_bold' => true],
-                            ];
-                        @endphp
-                        @foreach($features as $f)
-                            <tr>
-                                <td class="p-6 font-semibold">{{ $f['label'] }}</td>
-                                <td
-                                    class="p-6 {{ ($f['v1_bold'] ?? false) ? 'font-bold text-primary' : 'text-on-surface-variant' }}">
-                                    {{ $f['v1'] }}
-                                </td>
-                                <td class="p-6 text-on-surface-variant">{{ $f['v2'] }}</td>
-                                <td class="p-6 text-on-surface-variant">{{ $f['v3'] }}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </section>
 
         <!-- Trust Elements Grid -->
         <section class="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -148,7 +94,7 @@
                 $trust = [
                     ['title' => 'Certified Safe', 'desc' => 'Meets or exceeds all CPSC and ASTM safety standards for toddler play.', 'icon' => 'verified_user', 'color' => 'bg-secondary-container text-on-secondary-container'],
                     ['title' => 'Recommended', 'desc' => 'Voted top developmental toy by over 50 pediatric occupational therapists.', 'icon' => 'recommend', 'color' => 'bg-tertiary-container text-on-tertiary-container'],
-                    ['title' => 'Most Popular', 'desc' => 'Our #1 selling item for three consecutive years in the Nursery category.', 'icon' => 'trending_up', 'color' => 'bg-primary-container/20 text-primary'],
+                    ['title' => 'Most Popular', 'desc' => 'Our #1 selling item for three consecutive years in the Nursery category.', 'icon' => 'insights', 'color' => 'bg-primary-container/20 text-primary'],
                 ];
             @endphp
             @foreach($trust as $t)
@@ -172,10 +118,10 @@
                 <p class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">Current Price</p>
                 <p class="text-xl font-black text-sky-800">${{ number_format($product->price, 2) }}</p>
             </div>
-            <button
-                class="flex-[2] bg-gradient-to-b from-primary to-primary-container text-on-primary py-4 rounded-full font-bold shadow-lg shadow-primary/20 active:scale-95 transition-transform">
-                Buy Now
-            </button>
+            <a href="{{ route('product.click', $product->slug) }}" target="_blank"
+                class="flex-[2] text-center bg-gradient-to-b from-primary to-primary-container text-on-primary py-4 rounded-full font-bold shadow-lg shadow-primary/20 active:scale-95 transition-transform">
+                View on Partner Site
+            </a>
         </div>
     </div>
 
